@@ -5,7 +5,7 @@
   background: var(--kawi-black);
   color: #fff;
 
-  // Diagonal green racing stripes
+  // Diagonal red and blue racing stripes (Wheeltek logo colors)
   &::before,
   &::after {
     content: '';
@@ -24,7 +24,7 @@
   &::after {
     right: -34px;
     width: 34px;
-    opacity: 0.55;
+    background: var(--ion-color-secondary);
   }
 
   > * {
@@ -37,8 +37,8 @@
   display: inline-block;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(var(--ion-color-primary-rgb), 0.18);
-  color: var(--ion-color-primary);
+  background: var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
   font-size: 12px;
   font-weight: 600;
 }
@@ -59,7 +59,7 @@
 .hero p {
   max-width: 78%;
   margin: 0 0 18px;
-  color: #c9cfc4;
+  color: var(--kawi-muted-on-dark);
   font-size: 14px;
   line-height: 1.45;
 }
@@ -105,8 +105,8 @@
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: var(--kawi-black);
-  color: var(--ion-color-primary);
+  background: var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
   font-size: 22px;
 }
 

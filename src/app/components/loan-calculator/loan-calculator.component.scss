@@ -30,14 +30,14 @@ ion-range {
   margin: 6px 0;
   padding: 16px;
   border-radius: 14px;
-  background: var(--kawi-black);
-  color: #fff;
+  background: var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
   text-align: center;
   font-size: 13px;
 }
 
 .monthly {
-  color: var(--ion-color-primary);
+  color: #ffffff;
   font-family: var(--kawi-display-font);
   font-size: 34px;
   font-weight: 700;

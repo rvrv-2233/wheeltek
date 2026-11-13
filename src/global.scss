@@ -21,7 +21,7 @@
 
 /* ---------- Header toolbar (used on every page) ---------- */
 ion-toolbar.kawi-toolbar {
-  --background: var(--kawi-black);
+  --background: var(--ion-color-primary);
   --color: #ffffff;
   --border-width: 0;
 
@@ -35,7 +35,7 @@ ion-toolbar.kawi-toolbar {
 
   ion-menu-button,
   ion-back-button {
-    --color: var(--ion-color-primary);
+    --color: #ffffff;
   }
 }
 
@@ -121,7 +121,7 @@ ion-content {
     z-index: 1;
     margin: 0;
     max-width: 75%;
-    color: #c9cfc4;
+    color: var(--kawi-muted-on-dark);
     font-size: 14px;
   }
 }
@@ -133,7 +133,7 @@ ion-content {
   place-items: center;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: linear-gradient(135deg, #1e211c 0%, #141613 60%);
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 60%);
 
   &::before {
     content: '';
@@ -266,9 +266,9 @@ ion-content {
     border: 1px solid var(--kawi-border);
 
     &.active {
-      --background: var(--kawi-black);
-      --color: var(--ion-color-primary);
-      border-color: var(--kawi-black);
+      --background: var(--ion-color-primary);
+      --color: var(--ion-color-primary-contrast);
+      border-color: var(--ion-color-primary);
     }
   }
 }

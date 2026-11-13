@@ -1,8 +1,8 @@
 ion-tab-bar {
-  --background: var(--kawi-black);
-  --color: #9aa39a;
+  --background: #ffffff;
+  --color: #8a8a8a;
   --color-selected: var(--ion-color-primary);
-  border-top: 2px solid var(--ion-color-primary);
+  border-top: 1px solid var(--kawi-border);
   height: 62px;
 }
 

@@ -10,7 +10,7 @@
   ion-badge {
     align-self: flex-start;
     --background: var(--ion-color-primary);
-    --color: var(--kawi-black);
+    --color: var(--ion-color-primary-contrast);
     font-weight: 700;
   }
 }
@@ -22,8 +22,8 @@
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: var(--kawi-black);
-  color: var(--ion-color-primary);
+  background: var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
   font-size: 22px;
 }
 

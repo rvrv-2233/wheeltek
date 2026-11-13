@@ -1,29 +1,40 @@
-// Wheeltek Kawasaki theme colors.
-// Kawasaki's signature lime green is used as the primary color.
+// Wheeltek brand theme.
+// Colors taken from the Wheeltek logo and wheeltek.com.ph:
+// red is the main brand color, royal blue is the accent, on white.
 // https://ionicframework.com/docs/theming/colors
 
 :root {
-  --ion-color-primary: #69be28;
-  --ion-color-primary-rgb: 105, 190, 40;
-  --ion-color-primary-contrast: #0d0f0c;
-  --ion-color-primary-contrast-rgb: 13, 15, 12;
-  --ion-color-primary-shade: #5ca723;
-  --ion-color-primary-tint: #78c53e;
+  // Wheeltek red (website accent red; white text on it is readable)
+  --ion-color-primary: #df0909;
+  --ion-color-primary-rgb: 223, 9, 9;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #c40808;
+  --ion-color-primary-tint: #e22222;
 
-  --ion-color-dark: #141613;
-  --ion-color-dark-rgb: 20, 22, 19;
+  // Wheeltek blue (from the logo)
+  --ion-color-secondary: #0000e0;
+  --ion-color-secondary-rgb: 0, 0, 224;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #0000c5;
+  --ion-color-secondary-tint: #1a1ae3;
+
+  --ion-color-dark: #1a1a1a;
+  --ion-color-dark-rgb: 26, 26, 26;
   --ion-color-dark-contrast: #ffffff;
   --ion-color-dark-contrast-rgb: 255, 255, 255;
-  --ion-color-dark-shade: #121311;
-  --ion-color-dark-tint: #2c2d2b;
+  --ion-color-dark-shade: #171717;
+  --ion-color-dark-tint: #313131;
 
-  --ion-background-color: #f3f5f1;
-  --ion-text-color: #141613;
-  --ion-font-family: 'Barlow', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ion-background-color: #f4f4f4;
+  --ion-text-color: #1a1a1a;
+  --ion-font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   // Custom app variables
-  --kawi-black: #141613;
+  --kawi-black: #1a1a1a;
   --kawi-card: #ffffff;
-  --kawi-border: #e2e6de;
-  --kawi-display-font: 'Barlow Condensed', 'Barlow', sans-serif;
+  --kawi-border: #e2e2e2;
+  --kawi-muted-on-dark: #cfcfcf;
+  --kawi-display-font: 'Montserrat', sans-serif;
 }
