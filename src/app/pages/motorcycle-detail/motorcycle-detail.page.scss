@@ -15,16 +15,17 @@
 
   ion-chip {
     margin: 0;
-    --background: var(--ion-color-secondary);
-    --color: var(--ion-color-secondary-contrast);
-    font-weight: 700;
+    --background: var(--kawi-subtle);
+    --color: var(--ion-text-color);
+    font-weight: 600;
   }
 
   h1 {
     margin: 10px 0 2px;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.05;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
   }
 
   .price-tag {
@@ -45,7 +46,9 @@
   margin: 0 16px;
   padding: 0;
   border: 1px solid var(--kawi-border);
-  border-radius: 14px;
+  border-radius: var(--kawi-radius);
+  background: var(--kawi-card);
+  box-shadow: var(--kawi-shadow-sm);
 
   ion-icon {
     color: var(--ion-color-primary-shade);
@@ -60,7 +63,6 @@
   padding: 8px 16px 0;
 
   ion-button {
-    margin-bottom: 10px;
-    font-weight: 700;
+    margin-bottom: 8px;
   }
 }

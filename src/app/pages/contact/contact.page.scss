@@ -28,7 +28,7 @@
 
   p {
     margin: 0;
-    font-size: 11.5px;
+    font-size: 12px;
     line-height: 1.35;
   }
 }
@@ -37,7 +37,9 @@
   margin: 0 16px;
   padding: 0;
   border: 1px solid var(--kawi-border);
-  border-radius: 14px;
+  border-radius: var(--kawi-radius);
+  background: var(--kawi-card);
+  box-shadow: var(--kawi-shadow-sm);
 
   ion-icon {
     color: var(--ion-color-primary-shade);

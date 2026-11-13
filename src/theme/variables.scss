@@ -20,21 +20,39 @@
   --ion-color-secondary-shade: #0000c5;
   --ion-color-secondary-tint: #1a1ae3;
 
-  --ion-color-dark: #1a1a1a;
-  --ion-color-dark-rgb: 26, 26, 26;
+  // Neutrals: slate scale. Red is reserved for actions and active states.
+  --ion-color-dark: #0f172a;
+  --ion-color-dark-rgb: 15, 23, 42;
   --ion-color-dark-contrast: #ffffff;
   --ion-color-dark-contrast-rgb: 255, 255, 255;
-  --ion-color-dark-shade: #171717;
-  --ion-color-dark-tint: #313131;
+  --ion-color-dark-shade: #0d1425;
+  --ion-color-dark-tint: #272e3f;
 
-  --ion-background-color: #f4f4f4;
-  --ion-text-color: #1a1a1a;
+  // Secondary text (4.5:1+ on white and on the page background)
+  --ion-color-medium: #64748b;
+  --ion-color-medium-rgb: 100, 116, 139;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #58667a;
+  --ion-color-medium-tint: #74829a;
+
+  --ion-background-color: #f8fafc;
+  --ion-text-color: #0f172a;
   --ion-font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   // Custom app variables
-  --kawi-black: #1a1a1a;
+  --kawi-black: #0f172a;
+  --kawi-dark-2: #1e293b;
   --kawi-card: #ffffff;
-  --kawi-border: #e2e2e2;
-  --kawi-muted-on-dark: #cfcfcf;
+  --kawi-border: #e2e8f0;
+  --kawi-subtle: #f1f5f9;
+  --kawi-muted-on-dark: #cbd5e1;
+  --kawi-tint: rgba(223, 9, 9, 0.08);
   --kawi-display-font: 'Montserrat', sans-serif;
+
+  // Shape and elevation scale
+  --kawi-radius: 16px;
+  --kawi-radius-sm: 12px;
+  --kawi-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+  --kawi-shadow-md: 0 10px 30px rgba(15, 23, 42, 0.1);
 }

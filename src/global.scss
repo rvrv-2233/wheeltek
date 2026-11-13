@@ -20,64 +20,67 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 /* ---------- Header toolbar (used on every page) ---------- */
+ion-header.header-md,
+ion-header.header-ios {
+  box-shadow: none;
+}
+
 ion-toolbar.kawi-toolbar {
-  --background: var(--ion-color-primary);
-  --color: #ffffff;
-  --border-width: 0;
+  --background: var(--kawi-card);
+  --color: var(--ion-text-color);
+  --border-width: 0 0 1px 0;
+  --border-color: var(--kawi-border);
 
   ion-title {
     font-family: var(--kawi-display-font);
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 700;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
+    letter-spacing: -0.01em;
   }
 
   ion-menu-button,
   ion-back-button {
-    --color: #ffffff;
+    --color: var(--ion-text-color);
   }
 }
 
 ion-content {
-  --padding-bottom: 24px;
+  --padding-bottom: 32px;
+}
+
+/* ---------- Buttons: sentence case, comfortable touch height ---------- */
+ion-button {
+  --border-radius: var(--kawi-radius-sm);
+  --box-shadow: none;
+  min-height: 48px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 /* ---------- Headings ---------- */
 .display {
   font-family: var(--kawi-display-font);
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: -0.02em;
 }
 
 .section-title {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin: 26px 16px 12px;
+  margin: 32px 16px 12px;
 
   h2 {
     margin: 0;
     font-family: var(--kawi-display-font);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-
-    &::before {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 18px;
-      margin-right: 8px;
-      background: var(--ion-color-primary);
-      transform: skewX(-14deg);
-      vertical-align: -2px;
-    }
+    letter-spacing: -0.01em;
   }
 
   a {
-    color: var(--ion-color-primary-shade);
+    padding: 8px 0;
+    color: var(--ion-color-primary);
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -86,43 +89,27 @@ ion-content {
 
 /* ---------- Page intro banner ---------- */
 .page-banner {
-  position: relative;
-  overflow: hidden;
-  padding: 22px 16px 26px;
-  background: var(--kawi-black);
+  padding: 24px 16px 28px;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(223, 9, 9, 0.28) 0%, transparent 55%),
+    linear-gradient(160deg, var(--kawi-dark-2) 0%, var(--kawi-black) 70%);
   color: #fff;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -40px;
-    width: 120px;
-    height: 100%;
-    background: var(--ion-color-primary);
-    transform: skewX(-20deg);
-    opacity: 0.9;
-  }
-
   h1 {
-    position: relative;
-    z-index: 1;
-    margin: 0 0 6px;
-    max-width: 75%;
+    margin: 0 0 8px;
     font-family: var(--kawi-display-font);
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 1.05;
-    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
   }
 
   p {
-    position: relative;
-    z-index: 1;
     margin: 0;
-    max-width: 75%;
+    max-width: 34em;
     color: var(--kawi-muted-on-dark);
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.5;
   }
 }
 
@@ -133,17 +120,9 @@ ion-content {
   place-items: center;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 60%);
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: auto -20% 18% -20%;
-    height: 22%;
-    background: var(--ion-color-primary);
-    transform: skewY(-8deg);
-    opacity: 0.85;
-  }
+  background:
+    radial-gradient(70% 60% at 50% 110%, rgba(223, 9, 9, 0.35) 0%, transparent 70%),
+    linear-gradient(160deg, var(--kawi-dark-2) 0%, var(--kawi-black) 75%);
 
   img {
     position: relative;
@@ -164,8 +143,9 @@ ion-content {
   display: block;
   overflow: hidden;
   border: 1px solid var(--kawi-border);
-  border-radius: 14px;
+  border-radius: var(--kawi-radius);
   background: var(--kawi-card);
+  box-shadow: var(--kawi-shadow-sm);
   color: inherit;
   text-decoration: none;
   cursor: pointer;
@@ -176,34 +156,36 @@ ion-content {
   }
 
   .bike-info {
-    padding: 10px 12px 12px;
+    padding: 12px 14px 14px;
   }
 
   .bike-category {
-    color: var(--ion-color-primary-shade);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.6px;
+    color: var(--ion-color-medium);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
   }
 
   h3 {
-    margin: 2px 0 6px;
+    margin: 4px 0 8px;
     font-family: var(--kawi-display-font);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.25;
   }
 
   .bike-price {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
+    font-variant-numeric: tabular-nums;
   }
 
   .bike-engine {
-    margin-top: 2px;
+    margin-top: 4px;
     color: var(--ion-color-medium);
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 1.4;
   }
 }
 
@@ -212,15 +194,17 @@ ion-content {
   margin: 0 16px 12px;
   padding: 16px;
   border: 1px solid var(--kawi-border);
-  border-radius: 14px;
+  border-radius: var(--kawi-radius);
   background: var(--kawi-card);
+  box-shadow: var(--kawi-shadow-sm);
 }
 
 .price-tag {
   font-family: var(--kawi-display-font);
   font-size: 22px;
-  font-weight: 700;
-  color: var(--ion-color-primary-shade);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
 }
 
 .muted {
@@ -242,7 +226,7 @@ ion-content {
     ion-icon {
       flex-shrink: 0;
       margin-top: 2px;
-      color: var(--ion-color-primary);
+      color: #15803d; // green check reads as "included", not as an error
     }
   }
 }
@@ -250,9 +234,9 @@ ion-content {
 /* ---------- Horizontal chip filter bar ---------- */
 .chip-scroller {
   display: flex;
-  gap: 4px;
+  gap: 8px;
   overflow-x: auto;
-  padding: 4px 12px 8px;
+  padding: 4px 16px 8px;
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
@@ -261,14 +245,18 @@ ion-content {
 
   ion-chip {
     flex-shrink: 0;
+    min-height: 40px;
+    margin: 0;
+    padding: 0 16px;
     font-weight: 600;
     --background: #ffffff;
+    --color: var(--ion-text-color);
     border: 1px solid var(--kawi-border);
 
     &.active {
-      --background: var(--ion-color-primary);
-      --color: var(--ion-color-primary-contrast);
-      border-color: var(--ion-color-primary);
+      --background: var(--kawi-black);
+      --color: #ffffff;
+      border-color: var(--kawi-black);
     }
   }
 }
@@ -281,4 +269,29 @@ ion-content {
   ion-icon {
     font-size: 48px;
   }
+}
+
+/* ---------- Accessibility ---------- */
+a:focus-visible,
+.bike-card:focus-visible,
+.shortcut:focus-visible {
+  outline: 2px solid var(--ion-color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Segments: sentence case like the rest of the UI ---------- */
+ion-segment-button {
+  min-height: 44px;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 600;
 }

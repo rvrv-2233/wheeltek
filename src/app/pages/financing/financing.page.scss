@@ -5,7 +5,7 @@
   h3 {
     margin: 0 0 4px;
     font-family: var(--kawi-display-font);
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 700;
   }
 
@@ -22,9 +22,9 @@
   place-items: center;
   width: 46px;
   height: 46px;
-  border-radius: 12px;
-  background: var(--ion-color-primary);
-  color: var(--ion-color-primary-contrast);
+  border-radius: var(--kawi-radius-sm);
+  background: var(--kawi-tint);
+  color: var(--ion-color-primary);
   font-size: 22px;
 }
 
@@ -49,7 +49,8 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--ion-color-primary);
-  color: var(--ion-color-primary-contrast);
+  background: var(--kawi-black);
+  color: #ffffff;
+  font-size: 13px;
   font-weight: 700;
 }
