@@ -15,12 +15,7 @@
       <ion-list lines="none">
         @for (page of menuPages; track page.url) {
           <ion-menu-toggle [autoHide]="false">
-            <ion-item
-              routerDirection="root"
-              [routerLink]="page.url"
-              routerLinkActive="selected"
-              [detail]="false"
-            >
+            <ion-item routerDirection="root" [routerLink]="page.url" routerLinkActive="selected" [detail]="false">
               <ion-icon slot="start" [name]="page.icon"></ion-icon>
               <ion-label>{{ page.title }}</ion-label>
             </ion-item>

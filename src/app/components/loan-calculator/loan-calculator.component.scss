@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row,
+.field-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.field-label {
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+ion-range {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.result {
+  margin: 6px 0;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--kawi-black);
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+}
+
+.monthly {
+  color: var(--ion-color-primary);
+  font-family: var(--kawi-display-font);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.note {
+  margin: 0;
+  font-size: 12px;
+}

@@ -1,5 +1,5 @@
-import { Component, computed, inject, signal } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { Component, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
   IonHeader,
@@ -12,12 +12,25 @@ import {
   IonChip,
   IonIcon,
 } from '@ionic/angular';
+
 import { CatalogService } from '../../services/catalog.service';
 
 @Component({
   selector: 'app-motorcycles',
   templateUrl: './motorcycles.page.html',
-  imports: [CurrencyPipe, RouterLink, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonSearchbar, IonChip, IonIcon],
+  imports: [
+    CurrencyPipe,
+    RouterLink,
+    IonHeader,
+    IonToolbar,
+    IonButtons,
+    IonMenuButton,
+    IonTitle,
+    IonContent,
+    IonSearchbar,
+    IonChip,
+    IonIcon,
+  ],
 })
 export class MotorcyclesPage {
   private readonly catalog = inject(CatalogService);

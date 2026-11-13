@@ -10,18 +10,21 @@
 <ion-content>
   <div class="page-banner">
     <h1>{{ branch.name }}</h1>
-    <p>Part of Wheeltek Motor Sales Corporation, a motorcycle dealer that started in Cabanatuan City and now has branches all over Luzon.</p>
+    <p>
+      Part of Wheeltek Motor Sales Corporation, a motorcycle dealer that started in Cabanatuan City and now has branches
+      all over Luzon.
+    </p>
   </div>
 
   <!-- WHY CHOOSE US -->
   <div class="section-title"><h2>Why Wheeltek</h2></div>
   <div class="reasons">
     @for (reason of reasons; track reason.title) {
-      <div class="info-card reason">
-        <ion-icon [name]="reason.icon"></ion-icon>
-        <h3>{{ reason.title }}</h3>
-        <p class="muted">{{ reason.text }}</p>
-      </div>
+    <div class="info-card reason">
+      <ion-icon [name]="reason.icon"></ion-icon>
+      <h3>{{ reason.title }}</h3>
+      <p class="muted">{{ reason.text }}</p>
+    </div>
     }
   </div>
 
@@ -51,14 +54,18 @@
     </ion-item>
   </ion-list>
 
+  <!-- INQUIRY / TEST RIDE FORM -->
+  <div class="section-title" id="inquiry"><h2>Send an Inquiry</h2></div>
+  <app-inquiry-form [initialType]="type()" [initialBikeId]="bike()"></app-inquiry-form>
+
   <!-- STORE HOURS -->
   <div class="section-title"><h2>Store Hours</h2></div>
   <div class="info-card hours">
     @for (row of branch.hours; track row.day) {
-      <div class="hours-row">
-        <span><ion-icon name="time-outline"></ion-icon> {{ row.day }}</span>
-        <strong>{{ row.time }}</strong>
-      </div>
+    <div class="hours-row">
+      <span><ion-icon name="time-outline"></ion-icon> {{ row.day }}</span>
+      <strong>{{ row.time }}</strong>
+    </div>
     }
   </div>
 

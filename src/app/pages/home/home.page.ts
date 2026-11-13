@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
   IonHeader,
@@ -11,13 +11,25 @@ import {
   IonButton,
   IonIcon,
 } from '@ionic/angular';
+
 import { CatalogService } from '../../services/catalog.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
-  imports: [CurrencyPipe, RouterLink, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonButton, IonIcon],
+  imports: [
+    CurrencyPipe,
+    RouterLink,
+    IonHeader,
+    IonToolbar,
+    IonButtons,
+    IonMenuButton,
+    IonTitle,
+    IonContent,
+    IonButton,
+    IonIcon,
+  ],
 })
 export class HomePage {
   private readonly catalog = inject(CatalogService);

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
   IonHeader,
@@ -11,13 +11,29 @@ import {
   IonButton,
 } from '@ionic/angular';
 
+import { LoanCalculatorComponent } from '../../components/loan-calculator/loan-calculator.component';
+
 @Component({
   selector: 'app-financing',
   templateUrl: './financing.page.html',
   styleUrls: ['./financing.page.scss'],
-  imports: [RouterLink, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonIcon, IonButton],
+  imports: [
+    RouterLink,
+    LoanCalculatorComponent,
+    IonHeader,
+    IonToolbar,
+    IonButtons,
+    IonMenuButton,
+    IonTitle,
+    IonContent,
+    IonIcon,
+    IonButton,
+  ],
 })
 export class FinancingPage {
+  // Optional ?bike=<id> in the URL pre-selects a bike in the calculator.
+  readonly bike = input<string | undefined>(undefined);
+
   // Ways to pay for a new motorcycle.
   protected readonly paymentOptions = [
     {
@@ -49,6 +65,4 @@ export class FinancingPage {
     '2 pcs. 2x2 ID pictures',
     'Co-maker (if required)',
   ];
-
-  protected readonly terms = ['12 months', '18 months', '24 months', '36 months'];
 }

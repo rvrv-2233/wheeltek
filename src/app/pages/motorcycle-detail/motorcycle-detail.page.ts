@@ -1,5 +1,5 @@
-import { Component, computed, inject, input } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { Component, computed, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
   IonHeader,
@@ -15,6 +15,7 @@ import {
   IonItem,
   IonLabel,
 } from '@ionic/angular';
+
 import { CatalogService } from '../../services/catalog.service';
 
 @Component({

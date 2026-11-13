@@ -14,35 +14,43 @@ describe('AppComponent', () => {
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should have menu labels', async () => {
+  it('shows the branch name in the side menu', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    // ion-label is a scoped Stencil component whose slot content is relocated
-    // asynchronously, so wait for hydration before reading textContent (ROU-10799).
+    const brand = fixture.nativeElement.querySelector('.menu-brand h2');
+    expect(brand.textContent).toContain('Wheeltek Kawasaki');
+  });
+
+  it('has a side-menu link for every section', async () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    // ion-label slot content is relocated asynchronously, so wait for hydration first.
     await fixture.whenStable();
-    const app = fixture.nativeElement;
-    const menuItems = app.querySelectorAll('ion-label');
-    expect(menuItems.length).toEqual(12);
-    expect(menuItems[0].innerHTML).toContain('Inbox');
-    expect(menuItems[1].innerHTML).toContain('Outbox');
-  });
 
-  it('should have urls', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const app = fixture.nativeElement;
-    expect(app.querySelectorAll('ion-item').length).toEqual(12);
-    // Ionic applies the rendered href through its own async write queue, so
-    // reading the DOM attribute is flaky (FW-6264). Assert the routerLink
-    // binding directly, which resolves synchronously.
+    // ion-label is a scoped Stencil component; its text is kept in innerHTML, not textContent.
+    const labels = Array.from<HTMLElement>(fixture.nativeElement.querySelectorAll('ion-item ion-label')).map((el) =>
+      el.innerHTML
+        .replace(/<!--.*?-->/g, '')
+        .replace('&amp;', '&')
+        .trim(),
+    );
+    expect(labels).toEqual(['Home', 'Motorcycles', 'Accessories', 'Service Packages', 'Financing', 'About & Contact']);
+
+    // Check the routerLink bindings directly (Ionic sets the rendered href asynchronously).
     const router = TestBed.inject(Router);
-    const links = fixture.debugElement.queryAll(By.directive(RouterLink)).map((el) => el.injector.get(RouterLink));
-    expect(links.length).toEqual(6);
-    expect(router.serializeUrl(links[0].urlTree!)).toEqual('/folder/Inbox');
-    expect(router.serializeUrl(links[1].urlTree!)).toEqual('/folder/Outbox');
+    const urls = fixture.debugElement
+      .queryAll(By.directive(RouterLink))
+      .map((el) => router.serializeUrl(el.injector.get(RouterLink).urlTree!));
+    expect(urls).toEqual([
+      '/tabs/home',
+      '/tabs/motorcycles',
+      '/tabs/accessories',
+      '/tabs/services',
+      '/tabs/financing',
+      '/tabs/contact',
+    ]);
   });
 });

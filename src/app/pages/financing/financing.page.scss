@@ -28,24 +28,6 @@
   font-size: 22px;
 }
 
-.terms {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  padding: 0 16px;
-}
-
-.term {
-  padding: 14px 4px;
-  border-radius: 12px;
-  background: var(--kawi-black);
-  color: var(--ion-color-primary);
-  font-family: var(--kawi-display-font);
-  font-size: 16px;
-  font-weight: 700;
-  text-align: center;
-}
-
 .steps {
   margin: 0;
   padding: 0;

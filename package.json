@@ -1,8 +1,7 @@
 {
   "name": "wheeltek",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Wheeltek Kawasaki Bitas",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -56,5 +55,8 @@
     "vitest": "^5.1.0"
   },
   "prettier": "@ionic/prettier-config",
-  "description": "An Ionic project"
+  "description": "Mobile catalog, financing calculator and inquiry app for Wheeltek Kawasaki Bitas, Cabanatuan City",
+  "engines": {
+    "node": ">=22.22.3"
+  }
 }

@@ -1,0 +1,67 @@
+<div class="info-card calculator">
+  <ion-select
+    label="Motorcycle"
+    labelPlacement="stacked"
+    fill="outline"
+    interface="action-sheet"
+    [value]="bikeId()"
+    (ionChange)="onBikeChange($event)"
+    data-testid="calc-bike"
+  >
+    @for (option of bikes; track option.id) {
+      <ion-select-option [value]="option.id">{{ option.name }}</ion-select-option>
+    }
+  </ion-select>
+
+  <div class="row">
+    <span class="muted">Unit price (SRP)</span>
+    <strong>{{ bike().price | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}</strong>
+  </div>
+
+  <div class="field-label">
+    <span>Down payment · {{ downPercent() }}%</span>
+    <strong data-testid="calc-down">{{ quote().downPayment | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}</strong>
+  </div>
+  <ion-range
+    aria-label="Down payment percent"
+    [min]="financing.minDownPaymentPercent"
+    [max]="financing.maxDownPaymentPercent"
+    [step]="5"
+    [snaps]="true"
+    [value]="downPercent()"
+    (ionInput)="onDownChange($event)"
+  ></ion-range>
+
+  <div class="field-label"><span>Term</span></div>
+  <ion-segment [value]="months()" (ionChange)="onTermChange($event)">
+    @for (term of financing.terms; track term.months) {
+      <ion-segment-button [value]="term.months">
+        <ion-label>{{ term.months }} mo</ion-label>
+      </ion-segment-button>
+    }
+  </ion-segment>
+
+  <div class="result">
+    <span>Estimated monthly</span>
+    <div class="monthly" data-testid="calc-monthly">
+      {{ quote().monthlyAmortization | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}
+    </div>
+    <span>for {{ quote().months }} months</span>
+  </div>
+
+  <div class="row">
+    <span class="muted">Amount financed</span>
+    <span>{{ quote().amountFinanced | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}</span>
+  </div>
+  <div class="row">
+    <span class="muted">Total cost</span>
+    <span>{{ quote().totalCost | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}</span>
+  </div>
+
+  <p class="muted note">Estimate only, using sample rates. Final terms depend on credit approval at the branch.</p>
+
+  <ion-button expand="block" routerLink="/tabs/contact" [queryParams]="{ type: 'financing', bike: bikeId() }">
+    <ion-icon slot="start" name="send"></ion-icon>
+    Apply for This Plan
+  </ion-button>
+</div>

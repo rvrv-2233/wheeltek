@@ -1,9 +1,9 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'wheeltek',
-  webDir: 'www'
+  appId: 'ph.com.wheeltek.bitas',
+  appName: 'Wheeltek Kawasaki',
+  webDir: 'www',
 };
 
 export default config;

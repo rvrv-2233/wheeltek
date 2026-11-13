@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Accessory, BikeCategory, Motorcycle, Promo, ServicePackage } from '../models/catalog.models';
+
+import type { Accessory, BikeCategory, Motorcycle, Promo, ServicePackage } from '../models/catalog.models';
 
 /**
  * CatalogService keeps all the store data in one place.
@@ -158,7 +159,7 @@ export class CatalogService {
       engine: '998cc, inline-four',
       transmission: '6-speed manual with quick shifter',
       colors: ['Lime Green / Ebony / Pearl Blizzard White'],
-      description: 'The championship-winning superbike built from Kawasaki\'s WorldSBK racing experience.',
+      description: "The championship-winning superbike built from Kawasaki's WorldSBK racing experience.",
       highlights: ['World Superbike DNA', 'Cornering ABS', 'Launch control'],
     },
     {
@@ -208,16 +209,86 @@ export class CatalogService {
   ];
 
   private readonly accessories: Accessory[] = [
-    { id: 'hel-full', name: 'Full-Face Helmet (ICC)', type: 'Helmet', price: 3500, icon: 'shield-checkmark', description: 'ICC-certified full-face helmet with clear and smoke visor.' },
-    { id: 'hel-half', name: 'Half-Face Helmet', type: 'Helmet', price: 1800, icon: 'shield-half', description: 'Lightweight open-face helmet for city riding.' },
-    { id: 'jacket', name: 'Riding Jacket with Armor', type: 'Riding Gear', price: 4200, icon: 'shirt', description: 'Mesh jacket with shoulder and elbow protection.' },
-    { id: 'gloves', name: 'Riding Gloves', type: 'Riding Gear', price: 950, icon: 'hand-left', description: 'Breathable gloves with knuckle guards.' },
-    { id: 'raincoat', name: 'Raincoat Set', type: 'Riding Gear', price: 1200, icon: 'rainy', description: 'Waterproof jacket and pants for the rainy season.' },
-    { id: 'box', name: 'Top Box (30L)', type: 'Parts', price: 2500, icon: 'cube', description: 'Rear storage box that fits a full-face helmet.' },
-    { id: 'mirror', name: 'Side Mirror Set', type: 'Parts', price: 450, icon: 'scan', description: 'Replacement mirror set for Kawasaki models.' },
-    { id: 'chain', name: 'Chain & Sprocket Set', type: 'Parts', price: 1650, icon: 'cog', description: 'Genuine drive chain and sprocket kit.' },
-    { id: 'oil', name: 'Kawasaki 4T Engine Oil (1L)', type: 'Care', price: 380, icon: 'water', description: 'Genuine Kawasaki oil for 4-stroke engines.' },
-    { id: 'lube', name: 'Chain Lube Spray', type: 'Care', price: 320, icon: 'color-fill', description: 'Keeps your chain clean and protected from rust.' },
+    {
+      id: 'hel-full',
+      name: 'Full-Face Helmet (ICC)',
+      type: 'Helmet',
+      price: 3500,
+      icon: 'shield-checkmark',
+      description: 'ICC-certified full-face helmet with clear and smoke visor.',
+    },
+    {
+      id: 'hel-half',
+      name: 'Half-Face Helmet',
+      type: 'Helmet',
+      price: 1800,
+      icon: 'shield-half',
+      description: 'Lightweight open-face helmet for city riding.',
+    },
+    {
+      id: 'jacket',
+      name: 'Riding Jacket with Armor',
+      type: 'Riding Gear',
+      price: 4200,
+      icon: 'shirt',
+      description: 'Mesh jacket with shoulder and elbow protection.',
+    },
+    {
+      id: 'gloves',
+      name: 'Riding Gloves',
+      type: 'Riding Gear',
+      price: 950,
+      icon: 'hand-left',
+      description: 'Breathable gloves with knuckle guards.',
+    },
+    {
+      id: 'raincoat',
+      name: 'Raincoat Set',
+      type: 'Riding Gear',
+      price: 1200,
+      icon: 'rainy',
+      description: 'Waterproof jacket and pants for the rainy season.',
+    },
+    {
+      id: 'box',
+      name: 'Top Box (30L)',
+      type: 'Parts',
+      price: 2500,
+      icon: 'cube',
+      description: 'Rear storage box that fits a full-face helmet.',
+    },
+    {
+      id: 'mirror',
+      name: 'Side Mirror Set',
+      type: 'Parts',
+      price: 450,
+      icon: 'scan',
+      description: 'Replacement mirror set for Kawasaki models.',
+    },
+    {
+      id: 'chain',
+      name: 'Chain & Sprocket Set',
+      type: 'Parts',
+      price: 1650,
+      icon: 'cog',
+      description: 'Genuine drive chain and sprocket kit.',
+    },
+    {
+      id: 'oil',
+      name: 'Kawasaki 4T Engine Oil (1L)',
+      type: 'Care',
+      price: 380,
+      icon: 'water',
+      description: 'Genuine Kawasaki oil for 4-stroke engines.',
+    },
+    {
+      id: 'lube',
+      name: 'Chain Lube Spray',
+      type: 'Care',
+      price: 320,
+      icon: 'color-fill',
+      description: 'Keeps your chain clean and protected from rust.',
+    },
   ];
 
   private readonly servicePackages: ServicePackage[] = [
@@ -236,7 +307,13 @@ export class CatalogService {
       duration: '1 – 2 hours',
       icon: 'construct',
       recommended: true,
-      inclusions: ['Change oil', 'Air filter cleaning', 'Spark plug check', 'Brake adjustment', 'Chain cleaning & lube'],
+      inclusions: [
+        'Change oil',
+        'Air filter cleaning',
+        'Spark plug check',
+        'Brake adjustment',
+        'Chain cleaning & lube',
+      ],
     },
     {
       id: 'tune-up',
@@ -244,7 +321,13 @@ export class CatalogService {
       price: 1800,
       duration: '2 – 3 hours',
       icon: 'speedometer',
-      inclusions: ['Carburetor / FI cleaning', 'Valve clearance check', 'Spark plug replacement', 'Battery test', 'Test ride'],
+      inclusions: [
+        'Carburetor / FI cleaning',
+        'Valve clearance check',
+        'Spark plug replacement',
+        'Battery test',
+        'Test ride',
+      ],
     },
     {
       id: 'brake',
@@ -260,7 +343,11 @@ export class CatalogService {
       price: 0,
       duration: 'Per schedule',
       icon: 'ribbon',
-      inclusions: ['1st free check-up at 1,000 km', '2nd free check-up at 4,000 km', 'Labor is free; parts not included'],
+      inclusions: [
+        '1st free check-up at 1,000 km',
+        '2nd free check-up at 4,000 km',
+        'Labor is free; parts not included',
+      ],
     },
   ];
 

@@ -16,24 +16,24 @@
   <!-- TYPE FILTER -->
   <ion-segment [value]="selectedType()" (ionChange)="onTypeChange($event)" [scrollable]="true">
     @for (type of types; track type) {
-      <ion-segment-button [value]="type">
-        <ion-label>{{ type }}</ion-label>
-      </ion-segment-button>
+    <ion-segment-button [value]="type">
+      <ion-label>{{ type }}</ion-label>
+    </ion-segment-button>
     }
   </ion-segment>
 
   <!-- ACCESSORY LIST -->
   <div class="accessory-list">
     @for (item of accessories(); track item.id) {
-      <div class="info-card accessory">
-        <span class="accessory-icon"><ion-icon [name]="item.icon"></ion-icon></span>
-        <div class="accessory-text">
-          <span class="accessory-type">{{ item.type }}</span>
-          <h3>{{ item.name }}</h3>
-          <p class="muted">{{ item.description }}</p>
-        </div>
-        <div class="accessory-price">{{ item.price | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}</div>
+    <div class="info-card accessory">
+      <span class="accessory-icon"><ion-icon [name]="item.icon"></ion-icon></span>
+      <div class="accessory-text">
+        <span class="accessory-type">{{ item.type }}</span>
+        <h3>{{ item.name }}</h3>
+        <p class="muted">{{ item.description }}</p>
       </div>
+      <div class="accessory-price">{{ item.price | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}</div>
+    </div>
     }
   </div>
 

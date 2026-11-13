@@ -1,0 +1,83 @@
+<form class="info-card inquiry" [formGroup]="form" (ngSubmit)="send('sms')" novalidate>
+  <ion-select
+    label="I'm interested in"
+    labelPlacement="stacked"
+    fill="outline"
+    interface="popover"
+    formControlName="type"
+  >
+    @for (type of inquiries.types; track type.value) {
+      <ion-select-option [value]="type.value">{{ type.label }}</ion-select-option>
+    }
+  </ion-select>
+
+  <ion-input
+    label="Full name"
+    labelPlacement="stacked"
+    fill="outline"
+    autocomplete="name"
+    formControlName="name"
+    errorText="Please enter your name."
+    data-testid="inquiry-name"
+  ></ion-input>
+
+  <ion-input
+    label="Mobile number"
+    labelPlacement="stacked"
+    fill="outline"
+    type="tel"
+    inputmode="tel"
+    autocomplete="tel"
+    placeholder="0917 123 4567"
+    formControlName="mobile"
+    errorText="Enter a valid PH mobile number (e.g. 0917 123 4567)."
+    data-testid="inquiry-mobile"
+  ></ion-input>
+
+  <ion-select
+    label="Motorcycle (optional)"
+    labelPlacement="stacked"
+    fill="outline"
+    interface="action-sheet"
+    placeholder="Any / not sure yet"
+    formControlName="bikeId"
+  >
+    <ion-select-option value="">Any / not sure yet</ion-select-option>
+    @for (bike of bikes; track bike.id) {
+      <ion-select-option [value]="bike.id">{{ bike.name }}</ion-select-option>
+    }
+  </ion-select>
+
+  @if (showDate()) {
+    <ion-input
+      label="Preferred date"
+      labelPlacement="stacked"
+      fill="outline"
+      type="date"
+      [min]="today"
+      formControlName="preferredDate"
+    ></ion-input>
+  }
+
+  <ion-textarea
+    label="Message (optional)"
+    labelPlacement="stacked"
+    fill="outline"
+    [autoGrow]="true"
+    [counter]="true"
+    [maxlength]="500"
+    formControlName="message"
+  ></ion-textarea>
+
+  <div class="actions">
+    <ion-button type="submit" expand="block" data-testid="inquiry-sms">
+      <ion-icon slot="start" name="chatbubble-ellipses"></ion-icon>
+      Send via SMS
+    </ion-button>
+    <ion-button type="button" expand="block" fill="outline" color="dark" (click)="send('email')">
+      <ion-icon slot="start" name="mail"></ion-icon>
+      Send via Email
+    </ion-button>
+  </div>
+  <p class="muted note">Opens your messaging app with your inquiry ready to send. Nothing is stored by this app.</p>
+</form>

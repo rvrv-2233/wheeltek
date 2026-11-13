@@ -16,32 +16,28 @@
   <!-- PAYMENT OPTIONS -->
   <div class="section-title"><h2>Payment Options</h2></div>
   @for (option of paymentOptions; track option.title) {
-    <div class="info-card option">
-      <span class="option-icon"><ion-icon [name]="option.icon"></ion-icon></span>
-      <div>
-        <h3>{{ option.title }}</h3>
-        <p class="muted">{{ option.description }}</p>
-      </div>
+  <div class="info-card option">
+    <span class="option-icon"><ion-icon [name]="option.icon"></ion-icon></span>
+    <div>
+      <h3>{{ option.title }}</h3>
+      <p class="muted">{{ option.description }}</p>
     </div>
+  </div>
   }
 
-  <!-- INSTALLMENT TERMS -->
-  <div class="section-title"><h2>Installment Terms</h2></div>
-  <div class="terms">
-    @for (term of terms; track term) {
-      <div class="term">{{ term }}</div>
-    }
-  </div>
+  <!-- INSTALLMENT CALCULATOR -->
+  <div class="section-title"><h2>Installment Calculator</h2></div>
+  <app-loan-calculator [initialBikeId]="bike()"></app-loan-calculator>
 
   <!-- HOW TO APPLY -->
   <div class="section-title"><h2>How to Apply</h2></div>
   <div class="info-card">
     <ol class="steps">
       @for (step of steps; track step; let i = $index) {
-        <li>
-          <span class="step-number">{{ i + 1 }}</span>
-          <span>{{ step }}</span>
-        </li>
+      <li>
+        <span class="step-number">{{ i + 1 }}</span>
+        <span>{{ step }}</span>
+      </li>
       }
     </ol>
   </div>
@@ -51,7 +47,7 @@
   <div class="info-card">
     <ul class="check-list">
       @for (item of requirements; track item) {
-        <li><ion-icon name="document-text"></ion-icon>{{ item }}</li>
+      <li><ion-icon name="document-text"></ion-icon>{{ item }}</li>
       }
     </ul>
   </div>
