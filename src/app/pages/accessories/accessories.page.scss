@@ -1,0 +1,68 @@
+ion-segment {
+  margin: 14px 16px 16px;
+  width: auto;
+  background: #fff;
+  border: 1px solid var(--kawi-border);
+  --background: #fff;
+}
+
+ion-segment-button {
+  --indicator-color: var(--kawi-black);
+  --color-checked: var(--ion-color-primary);
+  font-weight: 600;
+  text-transform: none;
+}
+
+.accessory {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.accessory-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--kawi-black);
+  color: var(--ion-color-primary);
+  font-size: 24px;
+}
+
+.accessory-text {
+  flex: 1;
+  min-width: 0;
+
+  h3 {
+    margin: 1px 0 2px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.35;
+  }
+}
+
+.accessory-type {
+  color: var(--ion-color-primary-shade);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.accessory-price {
+  flex-shrink: 0;
+  font-family: var(--kawi-display-font);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.note {
+  font-size: 12px;
+}

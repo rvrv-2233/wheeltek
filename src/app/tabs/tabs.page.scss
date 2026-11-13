@@ -1,0 +1,12 @@
+ion-tab-bar {
+  --background: var(--kawi-black);
+  --color: #9aa39a;
+  --color-selected: var(--ion-color-primary);
+  border-top: 2px solid var(--ion-color-primary);
+  height: 62px;
+}
+
+ion-tab-button {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}

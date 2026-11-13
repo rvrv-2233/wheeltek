@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar class="kawi-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/motorcycles" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Bike Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @if (bike(); as bike) {
+    <div class="bike-visual detail-visual"><img src="assets/moto.svg" [alt]="bike.name" /></div>
+
+    <section class="detail-head">
+      <ion-chip>{{ bike.category }}</ion-chip>
+      <h1 class="display">{{ bike.name }}</h1>
+      <div class="price-tag">{{ bike.price | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}</div>
+      <p class="muted srp-note">Suggested retail price (SRP). Final price may vary per branch.</p>
+      <p>{{ bike.description }}</p>
+    </section>
+
+    <!-- SPECIFICATIONS -->
+    <div class="section-title"><h2>Specifications</h2></div>
+    <ion-list class="spec-list" lines="full">
+      <ion-item>
+        <ion-icon slot="start" name="speedometer"></ion-icon>
+        <ion-label>
+          <p>Engine</p>
+          <h3>{{ bike.engine }}</h3>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="cog"></ion-icon>
+        <ion-label>
+          <p>Transmission</p>
+          <h3>{{ bike.transmission }}</h3>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon slot="start" name="color-palette"></ion-icon>
+        <ion-label class="ion-text-wrap">
+          <p>Available Colors</p>
+          <h3>{{ bike.colors.join(', ') }}</h3>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <!-- HIGHLIGHTS -->
+    <div class="section-title"><h2>Highlights</h2></div>
+    <div class="info-card">
+      <ul class="check-list">
+        @for (item of bike.highlights; track item) {
+          <li><ion-icon name="checkmark-circle"></ion-icon>{{ item }}</li>
+        }
+      </ul>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <ion-button expand="block" routerLink="/tabs/contact">
+        <ion-icon slot="start" name="call"></ion-icon>
+        Inquire at the Branch
+      </ion-button>
+      <ion-button expand="block" fill="outline" color="dark" routerLink="/tabs/financing">
+        <ion-icon slot="start" name="card"></ion-icon>
+        See Financing Options
+      </ion-button>
+    </div>
+  } @else {
+    <div class="empty-state">
+      <ion-icon name="bicycle"></ion-icon>
+      <p>Motorcycle not found.</p>
+      <ion-button routerLink="/tabs/motorcycles">Back to Motorcycles</ion-button>
+    </div>
+  }
+</ion-content>

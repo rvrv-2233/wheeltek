@@ -1,0 +1,29 @@
+// Wheeltek Kawasaki theme colors.
+// Kawasaki's signature lime green is used as the primary color.
+// https://ionicframework.com/docs/theming/colors
+
+:root {
+  --ion-color-primary: #69be28;
+  --ion-color-primary-rgb: 105, 190, 40;
+  --ion-color-primary-contrast: #0d0f0c;
+  --ion-color-primary-contrast-rgb: 13, 15, 12;
+  --ion-color-primary-shade: #5ca723;
+  --ion-color-primary-tint: #78c53e;
+
+  --ion-color-dark: #141613;
+  --ion-color-dark-rgb: 20, 22, 19;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #121311;
+  --ion-color-dark-tint: #2c2d2b;
+
+  --ion-background-color: #f3f5f1;
+  --ion-text-color: #141613;
+  --ion-font-family: 'Barlow', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  // Custom app variables
+  --kawi-black: #141613;
+  --kawi-card: #ffffff;
+  --kawi-border: #e2e6de;
+  --kawi-display-font: 'Barlow Condensed', 'Barlow', sans-serif;
+}

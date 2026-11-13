@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar class="kawi-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>About &amp; Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="page-banner">
+    <h1>{{ branch.name }}</h1>
+    <p>Part of Wheeltek Motor Sales Corporation, a motorcycle dealer that started in Cabanatuan City and now has branches all over Luzon.</p>
+  </div>
+
+  <!-- WHY CHOOSE US -->
+  <div class="section-title"><h2>Why Wheeltek</h2></div>
+  <div class="reasons">
+    @for (reason of reasons; track reason.title) {
+      <div class="info-card reason">
+        <ion-icon [name]="reason.icon"></ion-icon>
+        <h3>{{ reason.title }}</h3>
+        <p class="muted">{{ reason.text }}</p>
+      </div>
+    }
+  </div>
+
+  <!-- CONTACT DETAILS -->
+  <div class="section-title"><h2>Contact Us</h2></div>
+  <ion-list class="contact-list" lines="full">
+    <ion-item [href]="branch.mapUrl" target="_blank" [detail]="true">
+      <ion-icon slot="start" name="location-outline"></ion-icon>
+      <ion-label class="ion-text-wrap">
+        <p>Address</p>
+        <h3>{{ branch.address }}</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item [href]="phoneLink" [detail]="true">
+      <ion-icon slot="start" name="call-outline"></ion-icon>
+      <ion-label>
+        <p>Phone</p>
+        <h3>{{ branch.phone }}</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item [href]="'mailto:' + branch.email" [detail]="true" lines="none">
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      <ion-label class="ion-text-wrap">
+        <p>Email</p>
+        <h3>{{ branch.email }}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- STORE HOURS -->
+  <div class="section-title"><h2>Store Hours</h2></div>
+  <div class="info-card hours">
+    @for (row of branch.hours; track row.day) {
+      <div class="hours-row">
+        <span><ion-icon name="time-outline"></ion-icon> {{ row.day }}</span>
+        <strong>{{ row.time }}</strong>
+      </div>
+    }
+  </div>
+
+  <div class="ion-padding-horizontal">
+    <ion-button expand="block" [href]="branch.mapUrl" target="_blank">
+      <ion-icon slot="start" name="navigate"></ion-icon>
+      Get Directions
+    </ion-button>
+  </div>
+</ion-content>

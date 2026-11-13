@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar class="kawi-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Motorcycles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="page-banner">
+    <h1>Kawasaki Lineup</h1>
+    <p>From everyday workhorses to Ninja superbikes. Tap a bike to see full details.</p>
+  </div>
+
+  <!-- SEARCH -->
+  <ion-searchbar
+    placeholder="Search a model (e.g. Barako, Ninja)"
+    [debounce]="200"
+    (ionInput)="onSearch($event)"
+  ></ion-searchbar>
+
+  <!-- CATEGORY FILTER -->
+  <div class="chip-scroller">
+    @for (category of categories; track category) {
+      <ion-chip [class.active]="selectedCategory() === category" (click)="selectCategory(category)">
+        {{ category }}
+      </ion-chip>
+    }
+  </div>
+
+  <p class="muted ion-padding-horizontal">{{ bikes().length }} model(s) found</p>
+
+  <!-- MOTORCYCLE GRID -->
+  @if (bikes().length > 0) {
+    <div class="bike-grid">
+      @for (bike of bikes(); track bike.id) {
+        <a class="bike-card" [routerLink]="['/tabs/motorcycles', bike.id]">
+          <div class="bike-visual"><img src="assets/moto.svg" [alt]="bike.name" /></div>
+          <div class="bike-info">
+            <div class="bike-category">{{ bike.category }}</div>
+            <h3>{{ bike.name }}</h3>
+            <div class="bike-price">{{ bike.price | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}</div>
+            <div class="bike-engine">{{ bike.engine }}</div>
+          </div>
+        </a>
+      }
+    </div>
+  } @else {
+    <div class="empty-state">
+      <ion-icon name="search-outline"></ion-icon>
+      <p>No motorcycle matches your search.</p>
+    </div>
+  }
+</ion-content>

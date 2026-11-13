@@ -1,0 +1,41 @@
+<ion-app>
+  <!-- SIDE MENU: opens when the ☰ button is tapped on any page -->
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-header class="ion-no-border">
+      <div class="menu-brand">
+        <div class="brand-mark">K</div>
+        <div>
+          <h2>Wheeltek Kawasaki</h2>
+          <p>Bitas, Cabanatuan City</p>
+        </div>
+      </div>
+    </ion-header>
+
+    <ion-content>
+      <ion-list lines="none">
+        @for (page of menuPages; track page.url) {
+          <ion-menu-toggle [autoHide]="false">
+            <ion-item
+              routerDirection="root"
+              [routerLink]="page.url"
+              routerLinkActive="selected"
+              [detail]="false"
+            >
+              <ion-icon slot="start" [name]="page.icon"></ion-icon>
+              <ion-label>{{ page.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        }
+      </ion-list>
+    </ion-content>
+
+    <ion-footer class="ion-no-border">
+      <ion-toolbar>
+        <p class="menu-footer">Authorized Kawasaki Dealer &middot; Nueva Ecija</p>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-menu>
+
+  <!-- All pages are displayed here -->
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

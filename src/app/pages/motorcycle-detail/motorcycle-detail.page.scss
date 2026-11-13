@@ -1,0 +1,66 @@
+.detail-visual {
+  aspect-ratio: 16 / 9;
+
+  img {
+    width: 70%;
+  }
+}
+
+.detail-head {
+  margin-top: -18px;
+  position: relative;
+  padding: 18px 16px 4px;
+  border-radius: 20px 20px 0 0;
+  background: var(--ion-background-color);
+
+  ion-chip {
+    margin: 0;
+    --background: var(--kawi-black);
+    --color: var(--ion-color-primary);
+    font-weight: 700;
+  }
+
+  h1 {
+    margin: 10px 0 2px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.05;
+  }
+
+  .price-tag {
+    font-size: 28px;
+  }
+
+  .srp-note {
+    margin: 0 0 12px;
+    font-size: 12px;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+}
+
+.spec-list {
+  margin: 0 16px;
+  padding: 0;
+  border: 1px solid var(--kawi-border);
+  border-radius: 14px;
+
+  ion-icon {
+    color: var(--ion-color-primary-shade);
+  }
+
+  h3 {
+    font-weight: 600;
+  }
+}
+
+.actions {
+  padding: 8px 16px 0;
+
+  ion-button {
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+}

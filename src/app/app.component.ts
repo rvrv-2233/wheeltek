@@ -1,0 +1,103 @@
+import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import {
+  IonApp,
+  IonMenu,
+  IonHeader,
+  IonToolbar,
+  IonContent,
+  IonFooter,
+  IonList,
+  IonMenuToggle,
+  IonItem,
+  IonIcon,
+  IonLabel,
+  IonRouterOutlet,
+  IonRouterLink,
+} from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import {
+  homeOutline,
+  bicycleOutline,
+  bagHandleOutline,
+  constructOutline,
+  cardOutline,
+  callOutline,
+  locationOutline,
+  timeOutline,
+  mailOutline,
+  chevronForward,
+  pricetag,
+  gift,
+  shieldCheckmark,
+  shieldHalf,
+  shirt,
+  handLeft,
+  rainy,
+  cube,
+  scan,
+  cog,
+  water,
+  colorFill,
+  speedometer,
+  disc,
+  ribbon,
+  checkmarkCircle,
+  flash,
+  colorPalette,
+  documentText,
+  cash,
+  calendar,
+  star,
+  navigate,
+  storefront,
+  construct,
+  bicycle,
+  card,
+  call,
+} from 'ionicons/icons';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    IonApp,
+    IonMenu,
+    IonHeader,
+    IonToolbar,
+    IonContent,
+    IonFooter,
+    IonList,
+    IonMenuToggle,
+    IonItem,
+    IonIcon,
+    IonLabel,
+    IonRouterLink,
+    IonRouterOutlet,
+  ],
+})
+export class AppComponent {
+  // Items shown in the side menu (hamburger menu).
+  protected readonly menuPages = [
+    { title: 'Home', url: '/tabs/home', icon: 'home-outline' },
+    { title: 'Motorcycles', url: '/tabs/motorcycles', icon: 'bicycle-outline' },
+    { title: 'Accessories', url: '/tabs/accessories', icon: 'bag-handle-outline' },
+    { title: 'Service Packages', url: '/tabs/services', icon: 'construct-outline' },
+    { title: 'Financing', url: '/tabs/financing', icon: 'card-outline' },
+    { title: 'About & Contact', url: '/tabs/contact', icon: 'call-outline' },
+  ];
+
+  constructor() {
+    // Register every icon used in the app once, here at startup.
+    addIcons({
+      homeOutline, bicycleOutline, bagHandleOutline, constructOutline, cardOutline, callOutline,
+      locationOutline, timeOutline, mailOutline, chevronForward, pricetag, gift,
+      shieldCheckmark, shieldHalf, shirt, handLeft, rainy, cube, scan, cog, water,
+      colorFill, speedometer, disc, ribbon, checkmarkCircle, flash, colorPalette,
+      documentText, cash, calendar, star, navigate, storefront, construct, bicycle, card, call,
+    });
+  }
+}

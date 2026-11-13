@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar class="kawi-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Wheeltek Kawasaki</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- HERO BANNER -->
+  <section class="hero">
+    <span class="hero-tag">Brgy. Bitas &middot; Cabanatuan City</span>
+    <h1>Let the<br /><span>good times</span><br />roll.</h1>
+    <p>Your authorized Kawasaki dealer in Nueva Ecija for brand-new motorcycles, genuine parts and expert service.</p>
+    <div class="hero-actions">
+      <ion-button routerLink="/tabs/motorcycles">View Motorcycles</ion-button>
+      <ion-button fill="outline" color="light" routerLink="/tabs/services">Book Service</ion-button>
+    </div>
+  </section>
+
+  <!-- QUICK SHORTCUTS -->
+  <nav class="shortcuts">
+    @for (item of shortcuts; track item.url) {
+      <a class="shortcut" [routerLink]="item.url">
+        <span class="shortcut-icon"><ion-icon [name]="item.icon"></ion-icon></span>
+        <span>{{ item.label }}</span>
+      </a>
+    }
+  </nav>
+
+  <!-- FEATURED MOTORCYCLES -->
+  <div class="section-title">
+    <h2>Featured Bikes</h2>
+    <a routerLink="/tabs/motorcycles">See all</a>
+  </div>
+  <div class="featured-scroller">
+    @for (bike of featured; track bike.id) {
+      <a class="bike-card" [routerLink]="['/tabs/motorcycles', bike.id]">
+        <div class="bike-visual"><img src="assets/moto.svg" [alt]="bike.name" /></div>
+        <div class="bike-info">
+          <div class="bike-category">{{ bike.category }}</div>
+          <h3>{{ bike.name }}</h3>
+          <div class="bike-price">{{ bike.price | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}</div>
+        </div>
+      </a>
+    }
+  </div>
+
+  <!-- PROMOS -->
+  <div class="section-title">
+    <h2>Promos</h2>
+  </div>
+  @for (promo of promos; track promo.title) {
+    <div class="info-card promo">
+      <span class="promo-icon"><ion-icon [name]="promo.icon"></ion-icon></span>
+      <div>
+        <strong>{{ promo.title }}</strong>
+        <p class="muted">{{ promo.subtitle }}</p>
+      </div>
+    </div>
+  }
+
+  <!-- BRANCH INFO -->
+  <div class="section-title">
+    <h2>Visit Us</h2>
+  </div>
+  <a class="info-card visit" routerLink="/tabs/contact">
+    <ion-icon name="location-outline"></ion-icon>
+    <div>
+      <strong>{{ branch.name }}</strong>
+      <p class="muted">{{ branch.address }}</p>
+      <p class="muted">{{ branch.hours[0].day }}: {{ branch.hours[0].time }}</p>
+    </div>
+    <ion-icon name="chevron-forward" class="chev"></ion-icon>
+  </a>
+</ion-content>

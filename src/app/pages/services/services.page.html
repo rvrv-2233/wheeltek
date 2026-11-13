@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar class="kawi-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Service Packages</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="page-banner">
+    <h1>Kawasaki Service Center</h1>
+    <p>Trained mechanics and genuine parts to keep your motorcycle running like new.</p>
+  </div>
+
+  <!-- SERVICE PACKAGES -->
+  <div class="section-title"><h2>Packages</h2></div>
+  @for (pkg of packages; track pkg.id) {
+    <div class="info-card package" [class.recommended]="pkg.recommended">
+      <div class="package-head">
+        <span class="package-icon"><ion-icon [name]="pkg.icon"></ion-icon></span>
+        <div class="package-title">
+          <h3>{{ pkg.name }}</h3>
+          <span class="muted"><ion-icon name="time-outline"></ion-icon> {{ pkg.duration }}</span>
+        </div>
+        @if (pkg.recommended) {
+          <ion-badge>Popular</ion-badge>
+        }
+      </div>
+
+      <ul class="check-list">
+        @for (item of pkg.inclusions; track item) {
+          <li><ion-icon name="checkmark-circle"></ion-icon>{{ item }}</li>
+        }
+      </ul>
+
+      <div class="package-price">
+        @if (pkg.price === 0) {
+          <span class="price-tag">FREE</span>
+        } @else {
+          <span class="muted">Starts at</span>
+          <span class="price-tag">{{ pkg.price | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}</span>
+        }
+      </div>
+    </div>
+  }
+
+  <!-- MAINTENANCE SCHEDULE -->
+  <div class="section-title"><h2>Maintenance Schedule</h2></div>
+  <div class="info-card schedule">
+    @for (row of schedule; track row.km) {
+      <div class="schedule-row">
+        <span class="km">{{ row.km }}</span>
+        <span>{{ row.task }}</span>
+      </div>
+    }
+  </div>
+
+  <div class="ion-padding-horizontal">
+    <ion-button expand="block" routerLink="/tabs/contact">
+      <ion-icon slot="start" name="calendar"></ion-icon>
+      Call to Book a Schedule
+    </ion-button>
+  </div>
+</ion-content>

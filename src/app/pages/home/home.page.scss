@@ -1,0 +1,176 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 28px 18px 30px;
+  background: var(--kawi-black);
+  color: #fff;
+
+  // Diagonal green racing stripes
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    bottom: -20px;
+    background: var(--ion-color-primary);
+    transform: skewX(-22deg);
+  }
+
+  &::before {
+    right: 18px;
+    width: 46px;
+  }
+
+  &::after {
+    right: -34px;
+    width: 34px;
+    opacity: 0.55;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.hero-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(var(--ion-color-primary-rgb), 0.18);
+  color: var(--ion-color-primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hero h1 {
+  margin: 14px 0 10px;
+  font-family: var(--kawi-display-font);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 0.95;
+  text-transform: uppercase;
+
+  span {
+    color: var(--ion-color-primary);
+  }
+}
+
+.hero p {
+  max-width: 78%;
+  margin: 0 0 18px;
+  color: #c9cfc4;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  ion-button {
+    margin: 0;
+    font-weight: 700;
+  }
+}
+
+.shortcuts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: -14px 12px 0;
+  padding: 14px 6px;
+  position: relative;
+  z-index: 2;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(20, 22, 19, 0.12);
+}
+
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--ion-text-color);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.shortcut-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--kawi-black);
+  color: var(--ion-color-primary);
+  font-size: 22px;
+}
+
+.featured-scroller {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0 16px 4px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bike-card {
+    flex: 0 0 68%;
+    scroll-snap-align: start;
+  }
+}
+
+.promo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  p {
+    margin: 2px 0 0;
+    font-size: 13px;
+  }
+}
+
+.promo-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(var(--ion-color-primary-rgb), 0.16);
+  color: var(--ion-color-primary-shade);
+  font-size: 20px;
+}
+
+.visit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+
+  > ion-icon:first-child {
+    flex-shrink: 0;
+    font-size: 28px;
+    color: var(--ion-color-primary-shade);
+  }
+
+  p {
+    margin: 2px 0 0;
+    font-size: 13px;
+  }
+
+  .chev {
+    flex-shrink: 0;
+    color: var(--ion-color-medium);
+  }
+}

@@ -1,0 +1,284 @@
+/*
+ * App Global CSS
+ * Styles here apply to every page of the Wheeltek Kawasaki app.
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* ---------- Header toolbar (used on every page) ---------- */
+ion-toolbar.kawi-toolbar {
+  --background: var(--kawi-black);
+  --color: #ffffff;
+  --border-width: 0;
+
+  ion-title {
+    font-family: var(--kawi-display-font);
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+  }
+
+  ion-menu-button,
+  ion-back-button {
+    --color: var(--ion-color-primary);
+  }
+}
+
+ion-content {
+  --padding-bottom: 24px;
+}
+
+/* ---------- Headings ---------- */
+.display {
+  font-family: var(--kawi-display-font);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 26px 16px 12px;
+
+  h2 {
+    margin: 0;
+    font-family: var(--kawi-display-font);
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 18px;
+      margin-right: 8px;
+      background: var(--ion-color-primary);
+      transform: skewX(-14deg);
+      vertical-align: -2px;
+    }
+  }
+
+  a {
+    color: var(--ion-color-primary-shade);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+/* ---------- Page intro banner ---------- */
+.page-banner {
+  position: relative;
+  overflow: hidden;
+  padding: 22px 16px 26px;
+  background: var(--kawi-black);
+  color: #fff;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -40px;
+    width: 120px;
+    height: 100%;
+    background: var(--ion-color-primary);
+    transform: skewX(-20deg);
+    opacity: 0.9;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 6px;
+    max-width: 75%;
+    font-family: var(--kawi-display-font);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.05;
+    text-transform: uppercase;
+  }
+
+  p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    max-width: 75%;
+    color: #c9cfc4;
+    font-size: 14px;
+  }
+}
+
+/* ---------- Motorcycle picture placeholder ---------- */
+.bike-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e211c 0%, #141613 60%);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: auto -20% 18% -20%;
+    height: 22%;
+    background: var(--ion-color-primary);
+    transform: skewY(-8deg);
+    opacity: 0.85;
+  }
+
+  img {
+    position: relative;
+    width: 78%;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
+  }
+}
+
+/* ---------- Bike card ---------- */
+.bike-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.bike-card {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--kawi-border);
+  border-radius: 14px;
+  background: var(--kawi-card);
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  .bike-info {
+    padding: 10px 12px 12px;
+  }
+
+  .bike-category {
+    color: var(--ion-color-primary-shade);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin: 2px 0 6px;
+    font-family: var(--kawi-display-font);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .bike-price {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .bike-engine {
+    margin-top: 2px;
+    color: var(--ion-color-medium);
+    font-size: 12px;
+  }
+}
+
+/* ---------- Generic white card ---------- */
+.info-card {
+  margin: 0 16px 12px;
+  padding: 16px;
+  border: 1px solid var(--kawi-border);
+  border-radius: 14px;
+  background: var(--kawi-card);
+}
+
+.price-tag {
+  font-family: var(--kawi-display-font);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ion-color-primary-shade);
+}
+
+.muted {
+  color: var(--ion-color-medium);
+}
+
+.check-list {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 4px 0;
+    font-size: 14px;
+
+    ion-icon {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--ion-color-primary);
+    }
+  }
+}
+
+/* ---------- Horizontal chip filter bar ---------- */
+.chip-scroller {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding: 4px 12px 8px;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ion-chip {
+    flex-shrink: 0;
+    font-weight: 600;
+    --background: #ffffff;
+    border: 1px solid var(--kawi-border);
+
+    &.active {
+      --background: var(--kawi-black);
+      --color: var(--ion-color-primary);
+      border-color: var(--kawi-black);
+    }
+  }
+}
+
+.empty-state {
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--ion-color-medium);
+
+  ion-icon {
+    font-size: 48px;
+  }
+}
