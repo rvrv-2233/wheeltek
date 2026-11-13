@@ -1,9 +1,9 @@
 .option {
   display: flex;
-  gap: 14px;
+  gap: var(--space-4);
 
   h3 {
-    margin: 0 0 4px;
+    margin: 0 0 var(--space-1);
     font-family: var(--kawi-display-font);
     font-size: 17px;
     font-weight: 700;
@@ -36,8 +36,8 @@
   li {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 8px 0;
+    gap: var(--space-3);
+    padding: var(--space-2) 0;
     font-size: 14px;
   }
 }

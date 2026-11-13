@@ -45,7 +45,7 @@ ion-toolbar.kawi-toolbar {
 }
 
 ion-content {
-  --padding-bottom: 32px;
+  --padding-bottom: var(--space-8);
 }
 
 /* ---------- Buttons: sentence case, comfortable touch height ---------- */
@@ -68,7 +68,7 @@ ion-button {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin: 32px 16px 12px;
+  margin: var(--space-8) var(--space-4) var(--space-3);
 
   h2 {
     margin: 0;
@@ -79,7 +79,7 @@ ion-button {
   }
 
   a {
-    padding: 8px 0;
+    padding: var(--space-2) 0;
     color: var(--ion-color-primary);
     font-size: 14px;
     font-weight: 600;
@@ -89,14 +89,14 @@ ion-button {
 
 /* ---------- Page intro banner ---------- */
 .page-banner {
-  padding: 24px 16px 28px;
+  padding: var(--space-6) var(--space-4) var(--space-6);
   background:
     radial-gradient(120% 140% at 100% 0%, rgba(223, 9, 9, 0.28) 0%, transparent 55%),
     linear-gradient(160deg, var(--kawi-dark-2) 0%, var(--kawi-black) 70%);
   color: #fff;
 
   h1 {
-    margin: 0 0 8px;
+    margin: 0 0 var(--space-2);
     font-family: var(--kawi-display-font);
     font-size: 26px;
     font-weight: 800;
@@ -117,8 +117,8 @@ ion-button {
 .bike-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  padding: 0 16px;
+  gap: var(--space-3);
+  padding: 0 var(--space-4);
 }
 
 .bike-card {
@@ -138,7 +138,7 @@ ion-button {
   }
 
   .bike-info {
-    padding: 12px 14px 14px;
+    padding: var(--space-3) var(--space-4) var(--space-4);
   }
 
   .bike-category {
@@ -150,7 +150,7 @@ ion-button {
   }
 
   h3 {
-    margin: 4px 0 8px;
+    margin: var(--space-1) 0 var(--space-2);
     font-family: var(--kawi-display-font);
     font-size: 16px;
     font-weight: 700;
@@ -164,7 +164,7 @@ ion-button {
   }
 
   .bike-engine {
-    margin-top: 4px;
+    margin-top: var(--space-1);
     color: var(--ion-color-medium);
     font-size: 13px;
     line-height: 1.4;
@@ -173,8 +173,8 @@ ion-button {
 
 /* ---------- Generic white card ---------- */
 .info-card {
-  margin: 0 16px 12px;
-  padding: 16px;
+  margin: 0 var(--space-4) var(--space-3);
+  padding: var(--space-4);
   border: 1px solid var(--kawi-border);
   border-radius: var(--kawi-radius);
   background: var(--kawi-card);
@@ -194,20 +194,20 @@ ion-button {
 }
 
 .check-list {
-  margin: 10px 0 0;
+  margin: var(--space-3) 0 0;
   padding: 0;
   list-style: none;
 
   li {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
-    padding: 4px 0;
+    gap: var(--space-2);
+    padding: var(--space-1) 0;
     font-size: 14px;
 
     ion-icon {
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: var(--space-1);
       color: #15803d; // green check reads as "included", not as an error
     }
   }
@@ -216,9 +216,9 @@ ion-button {
 /* ---------- Horizontal chip filter bar ---------- */
 .chip-scroller {
   display: flex;
-  gap: 8px;
+  gap: var(--space-2);
   overflow-x: auto;
-  padding: 4px 16px 8px;
+  padding: var(--space-1) var(--space-4) var(--space-2);
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
@@ -229,7 +229,7 @@ ion-button {
     flex-shrink: 0;
     min-height: 40px;
     margin: 0;
-    padding: 0 16px;
+    padding: 0 var(--space-4);
     font-weight: 600;
     --background: #ffffff;
     --color: var(--ion-text-color);
@@ -244,7 +244,7 @@ ion-button {
 }
 
 .empty-state {
-  padding: 48px 24px;
+  padding: var(--space-12) var(--space-6);
   text-align: center;
   color: var(--ion-color-medium);
 
@@ -289,6 +289,6 @@ ion-segment-button {
 .header-logo-sm {
   height: 24px;
   width: auto;
-  margin-right: 12px;
+  margin-right: var(--space-3);
   border-radius: 4px;
 }

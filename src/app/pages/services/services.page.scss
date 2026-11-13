@@ -5,7 +5,7 @@
 .package-head {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-3);
 
   ion-badge {
     align-self: flex-start;
@@ -31,7 +31,7 @@
   flex: 1;
 
   h3 {
-    margin: 0 0 2px;
+    margin: 0 0 var(--space-1);
     font-family: var(--kawi-display-font);
     font-size: 17px;
     font-weight: 700;
@@ -40,7 +40,7 @@
   span {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: var(--space-1);
     font-size: 13px;
   }
 }
@@ -49,21 +49,21 @@
   display: flex;
   align-items: baseline;
   justify-content: flex-end;
-  gap: 6px;
-  margin-top: 8px;
-  padding-top: 10px;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  padding-top: var(--space-3);
   border-top: 1px dashed var(--kawi-border);
   font-size: 13px;
 }
 
 .schedule {
-  padding: 4px 16px;
+  padding: var(--space-1) var(--space-4);
 }
 
 .schedule-row {
   display: flex;
-  gap: 12px;
-  padding: 12px 0;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
   border-bottom: 1px solid var(--kawi-border);
   font-size: 14px;
 

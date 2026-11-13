@@ -3,9 +3,9 @@
 }
 
 .detail-head {
-  margin-top: -18px;
+  margin-top: calc(var(--space-4) * -1);
   position: relative;
-  padding: 18px 16px 4px;
+  padding: var(--space-4) var(--space-4) var(--space-1);
   border-radius: 20px 20px 0 0;
   background: var(--ion-background-color);
 
@@ -17,7 +17,7 @@
   }
 
   h1 {
-    margin: 10px 0 2px;
+    margin: var(--space-3) 0 var(--space-1);
     font-size: 28px;
     font-weight: 800;
     line-height: 1.15;
@@ -29,7 +29,7 @@
   }
 
   .srp-note {
-    margin: 0 0 12px;
+    margin: 0 0 var(--space-3);
     font-size: 12px;
   }
 
@@ -39,7 +39,7 @@
 }
 
 .spec-list {
-  margin: 0 16px;
+  margin: 0 var(--space-4);
   padding: 0;
   border: 1px solid var(--kawi-border);
   border-radius: var(--kawi-radius);
@@ -56,9 +56,9 @@
 }
 
 .actions {
-  padding: 8px 16px 0;
+  padding: var(--space-2) var(--space-4) 0;
 
   ion-button {
-    margin-bottom: 8px;
+    margin-bottom: var(--space-2);
   }
 }

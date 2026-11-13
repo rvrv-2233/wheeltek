@@ -5,19 +5,19 @@
 .calculator {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-3);
 }
 
 .row,
 .field-label {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--space-3);
   font-size: 14px;
 }
 
 .field-label {
-  margin-top: 6px;
+  margin-top: var(--space-2);
   font-weight: 600;
 }
 
@@ -27,8 +27,8 @@ ion-range {
 }
 
 .result {
-  margin: 6px 0;
-  padding: 16px;
+  margin: var(--space-2) 0;
+  padding: var(--space-4);
   border-radius: var(--kawi-radius-sm);
   background: var(--kawi-black);
   color: var(--kawi-muted-on-dark);

@@ -41,7 +41,7 @@ import type { Motorcycle } from '../../models/catalog.models';
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
+      gap: var(--space-2);
       color: var(--ion-color-medium);
       font-size: 13px;
       font-weight: 600;

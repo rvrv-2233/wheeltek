@@ -1,13 +1,13 @@
 /* ---------- Hero ---------- */
 .hero {
-  padding: 24px 16px 28px;
+  padding: var(--space-6) var(--space-4) var(--space-6);
   background:
     radial-gradient(90% 70% at 70% 62%, rgba(223, 9, 9, 0.45) 0%, transparent 60%),
     linear-gradient(160deg, var(--kawi-dark-2) 0%, var(--kawi-black) 70%);
   color: #fff;
 
   h1 {
-    margin: 14px 0 10px;
+    margin: var(--space-4) 0 var(--space-3);
     font-family: var(--kawi-display-font);
     font-size: 34px;
     font-weight: 800;
@@ -31,8 +31,8 @@
 .hero-tag {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
@@ -42,7 +42,7 @@
 
 .hero-bike {
   display: block;
-  margin: 16px 0 8px;
+  margin: var(--space-4) 0 var(--space-2);
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -58,9 +58,9 @@
 
 .hero-bike-label {
   display: inline-flex;
-  gap: 8px;
+  gap: var(--space-2);
   align-items: baseline;
-  margin-top: 4px;
+  margin-top: var(--space-1);
   font-size: 14px;
 
   span {
@@ -71,8 +71,8 @@
 .hero-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 16px;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
 
   ion-button {
     margin: 0;
@@ -82,9 +82,9 @@
 /* ---------- Horizontal scrollers ---------- */
 .h-scroller {
   display: flex;
-  gap: 12px;
+  gap: var(--space-3);
   overflow-x: auto;
-  padding: 0 16px 8px;
+  padding: 0 var(--space-4) var(--space-2);
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
 
@@ -115,13 +115,13 @@
 }
 
 .category-name {
-  padding: 10px 12px 0;
+  padding: var(--space-3) var(--space-3) 0;
   font-size: 15px;
   font-weight: 700;
 }
 
 .category-count {
-  padding: 2px 12px 12px;
+  padding: var(--space-1) var(--space-3) var(--space-3);
   color: var(--ion-color-medium);
   font-size: 12px;
 }
@@ -131,7 +131,7 @@
 }
 
 .bike-monthly {
-  margin-top: 2px;
+  margin-top: var(--space-1);
   color: var(--ion-color-primary);
   font-size: 13px;
   font-weight: 600;
@@ -142,8 +142,8 @@
   display: flex;
   flex: 0 0 78%;
   flex-direction: column;
-  gap: 6px;
-  padding: 18px;
+  gap: var(--space-2);
+  padding: var(--space-4);
   border-radius: var(--kawi-radius);
   background: linear-gradient(135deg, #df0909 0%, #9f0606 100%);
   color: #fff;
@@ -176,8 +176,8 @@
 .trust {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 24px;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
 
   img {
     flex-shrink: 0;
@@ -194,8 +194,8 @@
   li {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 3px 0;
+    gap: var(--space-2);
+    padding: var(--space-1) 0;
     font-size: 13px;
     font-weight: 600;
 
@@ -210,7 +210,7 @@
 /* ---------- Visit ---------- */
 .visit {
   p {
-    margin: 4px 0 0;
+    margin: var(--space-1) 0 0;
     font-size: 14px;
     line-height: 1.45;
   }
@@ -219,8 +219,8 @@
 .visit-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 14px;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
 
   ion-button {
     margin: 0;

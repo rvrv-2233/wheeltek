@@ -5,13 +5,13 @@
 .inquiry {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--space-4);
 }
 
 .actions {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-1);
 }
 
 .note {

@@ -50,6 +50,16 @@
   --kawi-tint: rgba(223, 9, 9, 0.08);
   --kawi-display-font: 'Montserrat', sans-serif;
 
+  // Spacing scale (4px grid). Use these for every margin, padding and gap.
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
   // Shape and elevation scale
   --kawi-radius: 16px;
   --kawi-radius-sm: 12px;
