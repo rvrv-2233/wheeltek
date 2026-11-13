@@ -149,3 +149,20 @@
     color: var(--ion-color-medium);
   }
 }
+
+.dealer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  img {
+    flex-shrink: 0;
+    width: 96px;
+    height: auto;
+  }
+
+  p {
+    margin: 2px 0 0;
+    font-size: 13px;
+  }
+}

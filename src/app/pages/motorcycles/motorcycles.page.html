@@ -36,7 +36,9 @@
   <div class="bike-grid">
     @for (bike of bikes(); track bike.id) {
     <a class="bike-card" [routerLink]="['/tabs/motorcycles', bike.id]">
-      <div class="bike-visual"><img src="assets/moto.svg" [alt]="bike.name" /></div>
+      <div class="bike-visual" [class.has-photo]="bike.image">
+        <img [src]="bike.image ?? 'assets/moto.svg'" [alt]="bike.name" loading="lazy" width="900" height="560" />
+      </div>
       <div class="bike-info">
         <div class="bike-category">{{ bike.category }}</div>
         <h3>{{ bike.name }}</h3>

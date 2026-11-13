@@ -32,14 +32,14 @@ test('browse bikes, search, open details and compute an installment', async ({ p
 
   const bikeSelect = page.locator('[data-testid="calc-bike"]').filter({ visible: true });
   await expect(bikeSelect).toContainText('Kawasaki Barako II 175');
-  // 20% of 91,500 = 18,300 down; 73,200 x (1 + 2% x 24) / 24 = 4,514
-  await expect(page.locator('[data-testid="calc-down"]').filter({ visible: true })).toContainText('18,300');
-  await expect(page.locator('[data-testid="calc-monthly"]').filter({ visible: true })).toContainText('4,514');
+  // 20% of 95,500 = 19,100 down; 76,400 x (1 + 2% x 24) / 24 = 4,711.3 -> 4,712
+  await expect(page.locator('[data-testid="calc-down"]').filter({ visible: true })).toContainText('19,100');
+  await expect(page.locator('[data-testid="calc-monthly"]').filter({ visible: true })).toContainText('4,712');
 
   // Switching to 12 months raises the monthly payment.
   await page.locator('ion-segment-button').filter({ hasText: '12 mo', visible: true }).click();
-  // 73,200 x (1 + 1.8% x 12) / 12 = 7,417.6 -> 7,418
-  await expect(page.locator('[data-testid="calc-monthly"]').filter({ visible: true })).toContainText('7,418');
+  // 76,400 x (1 + 1.8% x 12) / 12 = 7,741.9 -> 7,742
+  await expect(page.locator('[data-testid="calc-monthly"]').filter({ visible: true })).toContainText('7,742');
 });
 
 test('test-ride form is pre-filled from the bike page and validates input', async ({ page }) => {

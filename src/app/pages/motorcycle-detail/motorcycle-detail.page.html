@@ -9,7 +9,9 @@
 
 <ion-content>
   @if (bike(); as bike) {
-  <div class="bike-visual detail-visual"><img src="assets/moto.svg" [alt]="bike.name" /></div>
+  <div class="bike-visual detail-visual" [class.has-photo]="bike.image">
+    <img [src]="bike.image ?? 'assets/moto.svg'" [alt]="bike.name" width="900" height="560" />
+  </div>
 
   <section class="detail-head">
     <ion-chip>{{ bike.category }}</ion-chip>

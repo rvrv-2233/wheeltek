@@ -13,6 +13,8 @@ export interface Motorcycle {
   description: string;
   highlights: string[];
   featured?: boolean;
+  /** Official product photo in src/assets/bikes (falls back to a drawing when missing). */
+  image?: string;
 }
 
 export interface Accessory {

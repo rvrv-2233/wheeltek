@@ -7,7 +7,8 @@ import type { Accessory, BikeCategory, Motorcycle, Promo, ServicePackage } from 
  * Every page asks this service for the data it needs, so prices
  * and products only have to be updated here.
  *
- * Motorcycle prices are Kawasaki Philippines 2026 SRPs.
+ * Motorcycle prices are Kawasaki Philippines 2026 SRPs
+ * (commuter models checked against kawasaki.ph on 2026-11-12).
  * Actual branch prices may vary.
  */
 @Injectable({ providedIn: 'root' })
@@ -29,9 +30,10 @@ export class CatalogService {
   private readonly motorcycles: Motorcycle[] = [
     {
       id: 'ct125',
+      image: 'assets/bikes/ct125.webp',
       name: 'Kawasaki CT125',
       category: 'Commuter',
-      price: 59700,
+      price: 62400,
       engine: '125cc, 4-stroke, single cylinder',
       transmission: '5-speed manual',
       colors: ['Black', 'Red', 'Blue'],
@@ -40,9 +42,10 @@ export class CatalogService {
     },
     {
       id: 'ct150',
+      image: 'assets/bikes/ct150.webp',
       name: 'Kawasaki CT150',
       category: 'Commuter',
-      price: 69500,
+      price: 74000,
       engine: '144.8cc, 4-stroke, single cylinder',
       transmission: '5-speed manual',
       colors: ['Black', 'Red'],
@@ -51,9 +54,10 @@ export class CatalogService {
     },
     {
       id: 'barako-2',
+      image: 'assets/bikes/barako-2.webp',
       name: 'Kawasaki Barako II 175',
       category: 'Commuter',
-      price: 91500,
+      price: 95500,
       engine: '175cc, 4-stroke, single cylinder',
       transmission: '5-speed manual',
       colors: ['Black', 'Red'],
@@ -63,6 +67,7 @@ export class CatalogService {
     },
     {
       id: 'barako-3',
+      image: 'assets/bikes/barako-3.webp',
       name: 'Kawasaki Barako III',
       category: 'Commuter',
       price: 96500,
@@ -74,6 +79,7 @@ export class CatalogService {
     },
     {
       id: 'brusky-125',
+      image: 'assets/bikes/brusky-125.webp',
       name: 'Kawasaki Brusky 125',
       category: 'Scooter',
       price: 75000,
@@ -85,6 +91,7 @@ export class CatalogService {
     },
     {
       id: 'rouser-ns125',
+      image: 'assets/bikes/rouser-ns125.webp',
       name: 'Kawasaki Rouser NS125 FI',
       category: 'Naked',
       price: 82000,

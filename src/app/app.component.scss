@@ -1,7 +1,8 @@
 .menu-brand {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
   padding: calc(var(--ion-safe-area-top, 0px) + 28px) 20px 22px;
   background: var(--kawi-black);
 
@@ -21,17 +22,11 @@
   }
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: var(--ion-color-primary);
-  color: #ffffff;
-  font-family: var(--kawi-display-font);
-  font-size: 24px;
-  font-weight: 800;
+.brand-logo {
+  display: block;
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
 }
 
 ion-menu ion-list {
