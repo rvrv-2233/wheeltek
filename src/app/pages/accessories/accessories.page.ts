@@ -34,6 +34,52 @@ import { CatalogService } from '../../services/catalog.service';
   ],
 })
 export class AccessoriesPage {
+  // Stand-in product photos from Wikimedia Commons (replace with branch photos when available).
+  // CC BY / CC BY-SA licenses require crediting the author.
+  protected readonly photoCredits = [
+    {
+      author: 'Ashley Pomeroy',
+      license: 'CC BY-SA 4.0',
+      source: 'https://commons.wikimedia.org/wiki/File:Full-Face_Helmet_9274.jpg',
+    },
+    {
+      author: 'kallerna',
+      license: 'CC BY-SA 3.0',
+      source: 'https://commons.wikimedia.org/wiki/File:Open-face_helmet.JPG',
+    },
+    {
+      author: 'W.carter',
+      license: 'CC0',
+      source: 'https://commons.wikimedia.org/wiki/File:Black_worn_leather_jacket_detail_1.jpg',
+    },
+    {
+      author: 'Thermos',
+      license: 'CC BY-SA 4.0',
+      source: 'https://commons.wikimedia.org/wiki/File:MotorcycleRacingGlove.jpg',
+    },
+    {
+      author: 'Alpha from Melbourne, Australia',
+      license: 'CC BY-SA 2.0',
+      source: 'https://commons.wikimedia.org/wiki/File:Raincoat_for_Cyclists_(1649092784).jpg',
+    },
+    { author: 'Jeff dean', license: 'CC BY-SA 2.5', source: 'https://commons.wikimedia.org/wiki/File:Top-case.jpg' },
+    {
+      author: 'SimonWaldherr',
+      license: 'CC BY-SA 4.0',
+      source: 'https://commons.wikimedia.org/wiki/File:Sprocket.jpg',
+    },
+    {
+      author: 'Interiot (retouched)',
+      license: 'Public domain',
+      source: 'https://commons.wikimedia.org/wiki/File:Motor_oil.JPG',
+    },
+    {
+      author: 'Alextredz',
+      license: 'CC BY-SA 4.0',
+      source: 'https://commons.wikimedia.org/wiki/File:Greasing_bicycle_chain.jpg',
+    },
+  ];
+
   private readonly catalog = inject(CatalogService);
 
   protected readonly types = ['All', 'Helmet', 'Riding Gear', 'Parts', 'Care'];

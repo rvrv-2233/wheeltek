@@ -60,3 +60,24 @@ ion-segment-button {
 .note {
   font-size: 12px;
 }
+
+.credits {
+  margin-top: 8px;
+  color: var(--ion-color-medium);
+  font-size: 12px;
+
+  summary {
+    padding: 8px 0;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  a {
+    color: inherit;
+  }
+}

@@ -45,5 +45,19 @@
     }
   </div>
 
-  <p class="muted ion-padding-horizontal note">Prices are estimates. Ask the branch for available sizes and stock.</p>
+  <p class="muted ion-padding-horizontal note">
+    Prices are estimates. Ask the branch for available sizes and stock. Photos are for illustration only.
+  </p>
+
+  <details class="credits ion-padding-horizontal">
+    <summary>Photo credits</summary>
+    <ul>
+      @for (credit of photoCredits; track credit.source) {
+      <li>
+        <a [href]="credit.source" target="_blank" rel="noopener">{{ credit.author }}</a>, {{ credit.license }}, via
+        Wikimedia Commons
+      </li>
+      }
+    </ul>
+  </details>
 </ion-content>
