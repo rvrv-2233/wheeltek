@@ -19,16 +19,10 @@ ion-segment-button {
   gap: 12px;
 }
 
-.accessory-icon {
-  display: grid;
+.accessory-photo {
   flex-shrink: 0;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: var(--kawi-radius-sm);
-  background: var(--kawi-tint);
-  color: var(--ion-color-primary);
-  font-size: 24px;
+  width: 88px;
+  height: 88px;
 }
 
 .accessory-text {

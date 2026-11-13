@@ -34,7 +34,7 @@
   <div class="accessory-list">
     @for (item of accessories(); track item.id) {
     <div class="info-card accessory">
-      <span class="accessory-icon"><ion-icon [name]="item.icon"></ion-icon></span>
+      <app-product-photo class="accessory-photo" [src]="'assets/accessories/' + item.id + '.jpg'" [alt]="item.name" />
       <div class="accessory-text">
         <span class="accessory-type">{{ item.type }}</span>
         <h3>{{ item.name }}</h3>

@@ -10,9 +10,9 @@ import {
   IonSegment,
   IonSegmentButton,
   IonLabel,
-  IonIcon,
 } from '@ionic/angular';
 
+import { ProductPhotoComponent } from '../../components/product-photo/product-photo.component';
 import { CatalogService } from '../../services/catalog.service';
 
 @Component({
@@ -20,6 +20,7 @@ import { CatalogService } from '../../services/catalog.service';
   templateUrl: './accessories.page.html',
   styleUrls: ['./accessories.page.scss'],
   imports: [
+    ProductPhotoComponent,
     CurrencyPipe,
     IonHeader,
     IonToolbar,
@@ -30,7 +31,6 @@ import { CatalogService } from '../../services/catalog.service';
     IonSegment,
     IonSegmentButton,
     IonLabel,
-    IonIcon,
   ],
 })
 export class AccessoriesPage {
