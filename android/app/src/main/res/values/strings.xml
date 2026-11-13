@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Wheeltek Kawasaki</string>
+    <string name="title_activity_main">Wheeltek Kawasaki</string>
+    <string name="package_name">ph.com.wheeltek.bitas</string>
+    <string name="custom_url_scheme">ph.com.wheeltek.bitas</string>
+</resources>
