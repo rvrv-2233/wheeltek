@@ -3,47 +3,70 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Wheeltek Kawasaki</ion-title>
+    <ion-title>
+      <img class="header-logo" src="assets/brand/wheeltek-logo.webp" alt="Wheeltek Kawasaki" width="600" height="174" />
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- HERO BANNER -->
+  <!-- HERO -->
   <section class="hero">
-    <span class="hero-tag">Brgy. Bitas &middot; Cabanatuan City</span>
-    <h1>Let the<br /><span>good times</span><br />roll.</h1>
-    <p>Your authorized Kawasaki dealer in Nueva Ecija for brand-new motorcycles, genuine parts and expert service.</p>
+    <span class="hero-tag"
+      ><ion-icon name="location-outline" aria-hidden="true"></ion-icon> Bitas, Cabanatuan City</span
+    >
+    <h1>Find your <span>Kawasaki</span>.</h1>
+    <p>Brand-new units, easy installment and genuine service at your authorized Wheeltek dealer.</p>
+
+    @if (heroBike; as bike) {
+    <a class="hero-bike" [routerLink]="['/tabs/motorcycles', bike.id]">
+      <img [src]="bike.image" [alt]="bike.name" width="900" height="625" />
+      <span class="hero-bike-label">
+        <strong>{{ bike.name }}</strong>
+        <span>from {{ monthlyFrom(bike.price) | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}/mo</span>
+      </span>
+    </a>
+    }
+
     <div class="hero-actions">
-      <ion-button routerLink="/tabs/motorcycles">View Motorcycles</ion-button>
-      <ion-button fill="outline" color="light" routerLink="/tabs/services">Book Service</ion-button>
+      <ion-button routerLink="/tabs/motorcycles">Browse bikes</ion-button>
+      <ion-button fill="outline" color="light" routerLink="/tabs/contact" [queryParams]="{ type: 'test-ride' }">
+        Book a test ride
+      </ion-button>
     </div>
   </section>
 
-  <!-- QUICK SHORTCUTS -->
-  <nav class="shortcuts">
-    @for (item of shortcuts; track item.url) {
-    <a class="shortcut" [routerLink]="item.url">
-      <span class="shortcut-icon"><ion-icon [name]="item.icon"></ion-icon></span>
-      <span>{{ item.label }}</span>
-    </a>
-    }
-  </nav>
-
-  <!-- FEATURED MOTORCYCLES -->
+  <!-- SHOP BY CATEGORY -->
   <div class="section-title">
-    <h2>Featured Bikes</h2>
+    <h2>Shop by category</h2>
     <a routerLink="/tabs/motorcycles">See all</a>
   </div>
-  <div class="featured-scroller">
+  <div class="h-scroller categories">
+    @for (cat of categories; track cat.name) {
+    <a class="category-card" routerLink="/tabs/motorcycles" [queryParams]="{ category: cat.name }">
+      <app-bike-photo [bike]="cat.bike" />
+      <span class="category-name">{{ cat.name }}</span>
+      <span class="category-count">{{ cat.count }} {{ cat.count === 1 ? 'model' : 'models' }}</span>
+    </a>
+    }
+  </div>
+
+  <!-- FEATURED BIKES -->
+  <div class="section-title">
+    <h2>Featured bikes</h2>
+    <a routerLink="/tabs/motorcycles">See all</a>
+  </div>
+  <div class="h-scroller featured">
     @for (bike of featured; track bike.id) {
     <a class="bike-card" [routerLink]="['/tabs/motorcycles', bike.id]">
-      <div class="bike-visual" [class.has-photo]="bike.image">
-        <img [src]="bike.image ?? 'assets/moto.svg'" [alt]="bike.name" loading="lazy" width="900" height="560" />
-      </div>
+      <app-bike-photo [bike]="bike" />
       <div class="bike-info">
         <div class="bike-category">{{ bike.category }}</div>
         <h3>{{ bike.name }}</h3>
         <div class="bike-price">{{ bike.price | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}</div>
+        <div class="bike-monthly">
+          or {{ monthlyFrom(bike.price) | currency: 'PHP' : 'symbol-narrow' : '1.0-0' }}/mo
+        </div>
       </div>
     </a>
     }
@@ -51,38 +74,45 @@
 
   <!-- PROMOS -->
   <div class="section-title">
-    <h2>Promos</h2>
+    <h2>Current promos</h2>
   </div>
-  @for (promo of promos; track promo.title) {
-  <div class="info-card promo">
-    <span class="promo-icon"><ion-icon [name]="promo.icon"></ion-icon></span>
-    <div>
+  <div class="h-scroller promos">
+    @for (promo of promos; track promo.title; let i = $index) {
+    <div class="promo-card" [attr.data-tone]="i % 3">
+      <ion-icon [name]="promo.icon" aria-hidden="true"></ion-icon>
       <strong>{{ promo.title }}</strong>
-      <p class="muted">{{ promo.subtitle }}</p>
+      <p>{{ promo.subtitle }}</p>
     </div>
+    }
   </div>
-  }
 
-  <!-- AUTHORIZED DEALER -->
-  <div class="info-card dealer">
+  <!-- TRUST -->
+  <div class="info-card trust">
     <img src="assets/brand/kawasaki-logo.webp" alt="Kawasaki" width="400" height="192" loading="lazy" />
-    <div>
-      <strong>Authorized Kawasaki Dealer</strong>
-      <p class="muted">Genuine units, parts and service from Wheeltek.</p>
-    </div>
+    <ul>
+      @for (item of trust; track item.text) {
+      <li><ion-icon [name]="item.icon" aria-hidden="true"></ion-icon>{{ item.text }}</li>
+      }
+    </ul>
   </div>
 
-  <!-- BRANCH INFO -->
+  <!-- VISIT US -->
   <div class="section-title">
-    <h2>Visit Us</h2>
+    <h2>Visit us</h2>
   </div>
-  <a class="info-card visit" routerLink="/tabs/contact">
-    <ion-icon name="location-outline"></ion-icon>
-    <div>
-      <strong>{{ branch.name }}</strong>
-      <p class="muted">{{ branch.address }}</p>
-      <p class="muted">{{ branch.hours[0].day }}: {{ branch.hours[0].time }}</p>
+  <div class="info-card visit">
+    <strong>{{ branch.name }}</strong>
+    <p class="muted">{{ branch.address }}</p>
+    <p class="muted">{{ branch.hours[0].day }}: {{ branch.hours[0].time }}</p>
+    <div class="visit-actions">
+      <ion-button [href]="phoneLink">
+        <ion-icon slot="start" name="call"></ion-icon>
+        Call
+      </ion-button>
+      <ion-button fill="outline" color="dark" [href]="branch.mapUrl" target="_blank">
+        <ion-icon slot="start" name="navigate"></ion-icon>
+        Directions
+      </ion-button>
     </div>
-    <ion-icon name="chevron-forward" class="chev"></ion-icon>
-  </a>
+  </div>
 </ion-content>

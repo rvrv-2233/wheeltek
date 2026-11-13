@@ -10,8 +10,8 @@ test('home page shows the branch and featured bikes', async ({ page }) => {
   await page.goto('/');
 
   await expect(page).toHaveURL(/\/tabs\/home$/);
-  await expect(page.getByRole('heading', { name: /good times/i })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Featured Bikes' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Find your Kawasaki/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Featured bikes' })).toBeVisible();
 });
 
 test('browse bikes, search, open details and compute an installment', async ({ page }) => {

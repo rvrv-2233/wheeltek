@@ -113,24 +113,6 @@ ion-button {
   }
 }
 
-/* ---------- Motorcycle picture placeholder ---------- */
-.bike-visual {
-  position: relative;
-  display: grid;
-  place-items: center;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background:
-    radial-gradient(70% 60% at 50% 110%, rgba(223, 9, 9, 0.35) 0%, transparent 70%),
-    linear-gradient(160deg, var(--kawi-dark-2) 0%, var(--kawi-black) 75%);
-
-  img {
-    position: relative;
-    width: 78%;
-    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
-  }
-}
-
 /* ---------- Bike card ---------- */
 .bike-grid {
   display: grid;
@@ -296,14 +278,17 @@ ion-segment-button {
   font-weight: 600;
 }
 
-/* ---------- Real product photos ---------- */
-.bike-visual.has-photo {
-  background: radial-gradient(90% 80% at 50% 40%, #ffffff 0%, var(--kawi-subtle) 100%);
+/* ---------- Header logo ---------- */
+.header-logo {
+  display: block;
+  height: 30px;
+  width: auto;
+  border-radius: 6px;
+}
 
-  img {
-    width: 88%;
-    height: 88%;
-    object-fit: contain;
-    filter: drop-shadow(0 8px 12px rgba(15, 23, 42, 0.18));
-  }
+.header-logo-sm {
+  height: 24px;
+  width: auto;
+  margin-right: 12px;
+  border-radius: 4px;
 }

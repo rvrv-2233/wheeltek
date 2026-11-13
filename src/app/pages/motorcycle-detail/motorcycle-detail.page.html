@@ -4,14 +4,20 @@
       <ion-back-button defaultHref="/tabs/motorcycles" text=""></ion-back-button>
     </ion-buttons>
     <ion-title>Bike Details</ion-title>
+    <img
+      slot="end"
+      class="header-logo-sm"
+      src="assets/brand/wheeltek-logo.webp"
+      alt="Wheeltek"
+      width="600"
+      height="174"
+    />
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   @if (bike(); as bike) {
-  <div class="bike-visual detail-visual" [class.has-photo]="bike.image">
-    <img [src]="bike.image ?? 'assets/moto.svg'" [alt]="bike.name" width="900" height="560" />
-  </div>
+  <app-bike-photo class="detail-photo" [bike]="bike" [eager]="true" />
 
   <section class="detail-head">
     <ion-chip>{{ bike.category }}</ion-chip>

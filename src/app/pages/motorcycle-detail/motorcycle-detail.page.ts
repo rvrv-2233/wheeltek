@@ -16,6 +16,7 @@ import {
   IonLabel,
 } from '@ionic/angular';
 
+import { BikePhotoComponent } from '../../components/bike-photo/bike-photo.component';
 import { CatalogService } from '../../services/catalog.service';
 
 @Component({
@@ -23,6 +24,7 @@ import { CatalogService } from '../../services/catalog.service';
   templateUrl: './motorcycle-detail.page.html',
   styleUrls: ['./motorcycle-detail.page.scss'],
   imports: [
+    BikePhotoComponent,
     CurrencyPipe,
     RouterLink,
     IonHeader,

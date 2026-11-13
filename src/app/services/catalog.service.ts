@@ -103,6 +103,7 @@ export class CatalogService {
     },
     {
       id: 'z500',
+      image: 'assets/bikes/z500.webp',
       name: 'Kawasaki Z500',
       category: 'Naked',
       price: 289800,
@@ -114,6 +115,7 @@ export class CatalogService {
     },
     {
       id: 'z900',
+      image: 'assets/bikes/z900.webp',
       name: 'Kawasaki Z900',
       category: 'Naked',
       price: 566500,
@@ -125,6 +127,7 @@ export class CatalogService {
     },
     {
       id: 'ninja-500',
+      image: 'assets/bikes/ninja-500.webp',
       name: 'Kawasaki Ninja 500',
       category: 'Sport',
       price: 353800,
@@ -137,6 +140,7 @@ export class CatalogService {
     },
     {
       id: 'zx-25r',
+      image: 'assets/bikes/zx-25r.webp',
       name: 'Kawasaki Ninja ZX-25R',
       category: 'Sport',
       price: 406000,
@@ -149,6 +153,7 @@ export class CatalogService {
     },
     {
       id: 'ninja-650',
+      image: 'assets/bikes/ninja-650.webp',
       name: 'Kawasaki Ninja 650',
       category: 'Sport',
       price: 456500,
@@ -160,6 +165,7 @@ export class CatalogService {
     },
     {
       id: 'zx-10r',
+      image: 'assets/bikes/zx-10r.webp',
       name: 'Kawasaki Ninja ZX-10R',
       category: 'Sport',
       price: 1020000,
@@ -171,6 +177,7 @@ export class CatalogService {
     },
     {
       id: 'klx150',
+      image: 'assets/bikes/klx150.webp',
       name: 'Kawasaki KLX150',
       category: 'Off-Road',
       price: 136900,
@@ -182,6 +189,7 @@ export class CatalogService {
     },
     {
       id: 'klx230',
+      image: 'assets/bikes/klx230.webp',
       name: 'Kawasaki KLX230',
       category: 'Off-Road',
       price: 196000,
@@ -193,6 +201,7 @@ export class CatalogService {
     },
     {
       id: 'eliminator',
+      image: 'assets/bikes/eliminator.webp',
       name: 'Kawasaki Eliminator',
       category: 'Cruiser',
       price: 366000,
@@ -204,6 +213,7 @@ export class CatalogService {
     },
     {
       id: 'kle500',
+      image: 'assets/bikes/kle500.webp',
       name: 'Kawasaki KLE500',
       category: 'Adventure',
       price: 341000,

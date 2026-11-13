@@ -59,6 +59,7 @@ import {
   send,
   mail,
   chatbubbleEllipses,
+  imageOutline,
 } from 'ionicons/icons';
 
 @Component({
@@ -139,6 +140,7 @@ export class AppComponent {
       send,
       mail,
       chatbubbleEllipses,
+      imageOutline,
     });
   }
 }
